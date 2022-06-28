@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+      font-family: Proxima Nova, system-ui, sans-serif;
+    }
+}
+
+body {
+    /* background-image: url(https://images.pexels.com/photos/325703/pexels-photo-325703.jpeg); */
+    object-fit: cover;
+    width: 100%;
+    background-color: rgb(50, 50, 50);
+    background-repeat: repeat;
+    image-rendering: pixelated;
+  
+}
+
+.gray-gradient {
+    background: rgb(154,154,154);
+    background: linear-gradient(90deg, rgba(154,154,154,1) 0%, rgba(151,151,167,0.8197872899159664) 48%, rgba(0,212,255,0) 100%);
+}
