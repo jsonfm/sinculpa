@@ -20,10 +20,12 @@
     "gatsby-plugin-image": "^2.17.0",
     "gatsby-plugin-sharp": "^4.17.0",
     "gatsby-plugin-sitemap": "^5.17.0",
+    "gatsby-plugin-smoothscroll": "^1.2.0",
     "gatsby-source-filesystem": "^4.17.0",
     "gatsby-transformer-sharp": "^4.17.0",
     "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "react-dom": "^18.1.0",
+    "react-icons": "^4.4.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.7",

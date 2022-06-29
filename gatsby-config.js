@@ -8,7 +8,8 @@ module.exports = {
     "gatsby-plugin-postcss",
     "gatsby-plugin-image", 
     "gatsby-plugin-sitemap", 
-    "gatsby-plugin-sharp", 
+    "gatsby-plugin-sharp",
+    "gatsby-plugin-smoothscroll", 
     "gatsby-transformer-sharp", {
     resolve: 'gatsby-source-filesystem',
     options: {
