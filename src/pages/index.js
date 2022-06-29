@@ -3,10 +3,12 @@ import { Layout } from "../components/Layout";
 import { StaticImage } from "gatsby-plugin-image";
 import scrollTo from 'gatsby-plugin-smoothscroll';
 
+
 const brunchs = [1, 2, 3, 4, 5];
 
-export default function IndexPage() {
 
+export default function IndexPage() {
+  
   return (
     <Layout>
       <section class="my-2 flex flex-col items-center justify-center pt-3">
@@ -58,8 +60,8 @@ export default function IndexPage() {
           />
         </div>
         <div class="bg-red-600/50 flex w-full overflow-x-auto min-h-fit py-5">
-          {brunchs.map((items, index) => (
-              <div class="snap-center text-white flex flex-col items-center justify-center px-6 my-3">
+          {brunchs.map((index) => (
+              <div class="snap-center text-white flex flex-col items-center justify-center px-6 my-3" key={index}>
                 <StaticImage
                   src="https://images.pexels.com/photos/407041/pancakes-maple-syrup-sweet-407041.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                   class="h-64 w-64 rounded-full object-cover border-4 border-white"
