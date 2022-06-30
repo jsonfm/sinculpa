@@ -1,14 +1,14 @@
 import * as React from "react";
+import { graphql } from "gatsby";
+import { StaticImage, GatsbyImage } from "gatsby-plugin-image";
 import { Layout } from "../components/Layout";
-import { StaticImage } from "gatsby-plugin-image";
+import { wines } from "../api/wines";
 import scrollTo from 'gatsby-plugin-smoothscroll';
 
 
 const brunchs = [1, 2, 3, 4, 5];
 
-
-export default function IndexPage() {
-  
+export default function IndexPage({data}) {
   return (
     <Layout>
       <section class="my-2 flex flex-col items-center justify-center pt-3">
@@ -75,9 +75,7 @@ export default function IndexPage() {
                 </div>
             </div>
           ))}
-
         </div>
-
       </section>
 
       {/* Arepas section */}
@@ -171,7 +169,7 @@ export default function IndexPage() {
         <div class="relative h-180">
           <div class="absolute flex justify-center items-center px-3 py-5 w-full h-full z-10">
               <div class="border-4 bg-black/60 px-6 py-6 w-full text-white">
-                <p class="text-2xl text-center font-bold uppercase mb-5">Cafetería y Postres</p>
+                <p class="text-2xl text-center font-bold uppercase mb-6">Cafetería y Postres</p>
                 <div class="flex justify-between mb-2">
                   <p class="text-xl">Café</p>
                   <p class="text-xl">$1.00</p>
@@ -225,15 +223,26 @@ export default function IndexPage() {
         </div>
       </section>
 
-      {/* End */}
+      {/* wine section */}
       <section id="wine-section">
-            <div class="relative h-128">
-              <div class="absolute flex justify-center w-full top-10 text-white z-10">
-                <div class="bg-red-800/75 text-2xl text-center uppercase p-5 border w-3/4 font-bold">Vinos</div>
+            <div class="relative border-8 border-rose-900/50 overflow-hidden">
+              <div class="absolute bg-rose-900/50 flex justify-center w-full overflow-x-auto min-h-fit py-5 z-20">
+                  {wines.map((wine, index)=>(
+                    <div class="snap-center text-white flex flex-col items-center justify-center px-6 my-3" key={`wine-${index}`}>
+                      <div class="h-12 rounded-full flex justify-center items-center w-full text-2xl uppercase font-bold mb-4 text-center">{wine.name}</div>
+                      <StaticImage
+                        loading="lazy"
+                        src="https://images.pexels.com/photos/1407846/pexels-photo-1407846.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        alt={`wine-${index}`}
+                        class="h-64 w-64 rounded-full object-cover border-4 border-whiter"
+                      />
+                      <div class="bg-white rounded-full text-rose-700 flex flex-col justify-center items-center w-32 h-12 -mt-5 z-20 text-2xl font-bold">$ {wine.price}</div>
+                    </div>
+                  ))}
               </div>
               <StaticImage
                 src="https://images.pexels.com/photos/391213/pexels-photo-391213.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                class="absolute top-0 w-full h-full object-cover"
+                class="w-full h-full object-cover"
               />
             </div>
       </section>
@@ -246,3 +255,4 @@ export default function IndexPage() {
     </Layout>
   )
 }
+
