@@ -11,55 +11,61 @@ const brunchs = [1, 2, 3, 4, 5];
 export default function IndexPage({data}) {
   return (
     <Layout>
-      <section class="my-2 flex flex-col items-center justify-center pt-3">
-        <StaticImage
-          class="w-2/3"
-          src="../images/logo.png"
-        />
-        <p class="text-white font-bold text-3xl mt-5">BIENVENIDO</p>
-        <p class="text-white">Busca el equilibrio</p>
-        <div class="grid grid-cols-2 mt-4 text-white">
-          <div class="m-4">
-            <p class="text-xl text-center uppercase" onClick={() => scrollTo('#brunchs-section')}>Brunch</p>
+      <section class="relative min-h-screen p-7 mx-3 my-7">
+        <div class="absolute inset-x-1/2 -translate-x-1/2 inset-y-1/2 -translate-y-1/2 py-7 flex flex-col justify-center items-center w-full  md:w-96 h-full bg-amber-900/25 border-4">
+          <StaticImage
+            class="w-2/3 "
+            placeholder="blurred"
+            src="../images/logo.png"
+          />
+          <p class="text-white font-bold text-3xl mt-5 pulsate">BIENVENIDO</p>
+          <p class="text-white">Aquí nuestro Menú</p>
+          <div class="flex justify-center w-full mb-4">
+            <div class="h-1 bg-white w-1/2">.</div>
           </div>
-          <div class="m-4">
-            <p class="text-xl text-center uppercase" onClick={() => scrollTo('#arepas-section')}>Arepas</p>
-          </div>
-          <div class="m-4">
-            <p class="text-xl text-center uppercase">Platos Fuertes</p>
-          </div>
-          <div class="m-4">
-            <p class="text-xl text-center uppercase" onClick={() => scrollTo('#salad-section')}>Ensaladas</p>
-          </div>
-          <div class="m-4">
-            <p class="text-xl text-center uppercase">Mexicana</p>
-          </div>
-          <div class="m-4">
-            <p class="text-xl text-center uppercase" onClick={() => scrollTo('#bebidas-section')}>Bebidas</p>
-          </div>
-          <div class="m-4">
-            <p class="text-xl text-center uppercase" onClick={() => scrollTo('#coffee-section')}>Cafetería y postres</p>
-          </div>
-          <div class="m-4">
-            <p class="text-xl text-center uppercase" onClick={() => scrollTo('#wine-section')}>Vinos</p>
+          <div class="grid grid-cols-2 mt-4 text-white">
+            <div class="m-4 cursor-pointer">
+              <p class="text-xl text-center uppercase" onClick={() => scrollTo('#brunchs-section')}>Brunch</p>
+            </div>
+            <div class="m-4">
+              <p class="text-xl text-center uppercase" onClick={() => scrollTo('#arepas-section')}>Arepas</p>
+            </div>
+            <div class="m-4">
+              <p class="text-xl text-center uppercase">Platos Fuertes</p>
+            </div>
+            <div class="m-4">
+              <p class="text-xl text-center uppercase" onClick={() => scrollTo('#salad-section')}>Ensaladas</p>
+            </div>
+            <div class="m-4">
+              <p class="text-xl text-center uppercase">Mexicana</p>
+            </div>
+            <div class="m-4">
+              <p class="text-xl text-center uppercase" onClick={() => scrollTo('#bebidas-section')}>Bebidas</p>
+            </div>
+            <div class="m-4">
+              <p class="text-xl text-center uppercase" onClick={() => scrollTo('#coffee-section')}>Cafetería y postres</p>
+            </div>
+            <div class="m-4">
+              <p class="text-xl text-center uppercase" onClick={() => scrollTo('#wine-section')}>Vinos</p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Brunchs section */}
-      <section id="brunchs-section">
-        <div class="relative h-96">
+      <section id="brunchs-section" class="md:flex min-h-screen">
+        <div class="relative border-4 h-96 md:w-1/2  md:h-screen">
           <div class="absolute text-white bg-rose-800/75 z-10 w-3/4 top-10 right-0 px-5 py-4">
-            <p class="text-3xl font-bold uppercase">Brunchs</p>
+            <p class="text-6xl capitalize font-cookie">Brunch</p>
             <p class="text-xl font-semibold underline">Pancakes Americano</p>
             <p class="text-lg">4 Pancakes, huevo, tocino, miel, mantequilla, queso mozzarella, jugo de naranja.</p>
           </div>
           <StaticImage
             src="https://images.pexels.com/photos/2105104/pexels-photo-2105104.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-            class="absolute top-0 object-cover w-full h-full"
+            class="absolute top-0 object-cover h-full w-full"
           />
         </div>
-        <div class="bg-red-600/50 flex w-full overflow-x-auto min-h-fit py-5">
+        <div class="bg-rose-800/50 flex overflow-x-auto w-full min-h-fit md:w-1/2 py-5">
           {brunchs.map((index) => (
               <div class="snap-center text-white flex flex-col items-center justify-center px-6 my-3" key={index}>
                 <StaticImage
@@ -79,10 +85,10 @@ export default function IndexPage({data}) {
       </section>
 
       {/* Arepas section */}
-      <section id="arepas-section">
-        <div class="relative h-96">
-          <div class="absolute z-50 text-white h-32 bg-orange-400/50 px-5 mt-5 py-3">
-            <p class="text-3xl font-bold uppercase">Arepas</p>
+      <section id="arepas-section" class="min-h-screen md:flex">
+        <div class="relative order-last h-screen md:w-1/2 border-8 border-orange-400">
+          <div class="absolute z-50 text-white h-48 bg-orange-400/25 px-5 mt-5 py-3">
+            <p class="text-6xl font-cookie">Arepas</p>
             <p class="text-xl font-semibold underline">Reina Pepiada</p>
             <p class="text-lg">Pollo, Aguacate, cebolla y perejil.</p>
           </div>
@@ -91,13 +97,14 @@ export default function IndexPage({data}) {
             class="absolute top-0 w-full object-cover h-full"
           />
         </div>
+        <div class="md:h-screen md:w-1/2 bg-orange-500/50">.</div>
       </section>
 
       {/* Ensaladas section */}
-      <section id="salad-section">
-        <div class="relative h-96  mb-4 md:h-96 md:w-1/2">
-          <div class="absolute bg-lime-900/75 z-10 h-32 px-4 mt-5 w-3/4 py-2">
-            <p class="text-white text-3xl font-bold">Ensaladas</p>
+      <section id="salad-section" class="md:flex flex-col items-center justify-center md:px-7">
+        <div class="relative h-96 mb-4 md:h-128 md:w-2/3">
+          <div class="absolute bg-lime-900/75 z-10 h-48 px-4 mt-5 w-3/4 py-2">
+            <p class="text-white text-7xl font-cookie">Ensaladas</p>
             <p class="text-white text-base font-semibold">Lechuga, tomate cherry, queso ricota, brotes, pollo, aguacate, maíz amarillo.</p>
           </div>          
           <StaticImage
@@ -106,7 +113,29 @@ export default function IndexPage({data}) {
           />
         </div>
 
-        <div class="relative h-72  mb-4 border-4 md:h-96 md:w-1/2">
+        <div class="md:self-start relative h-72 mt-1 mb-4 border-4 md:h-96 md:w-1/2">
+          <div class="absolute w-full bg-amber-800/75 z-50 px-4 py-2">
+            <p class="text-white text-2xl font-bold underline underline-offset-2 mb-2">Ensalada de Pollo</p>
+            <p class="text-white text-base font-semibold">Lechuga, tomate cherry, queso ricota, brotes, pollo, aguacate, maíz amarillo.</p>
+          </div>          
+          <StaticImage
+            src="https://images.pexels.com/photos/3026808/pexels-photo-3026808.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            class="absolute h-full w-full object-cover top-0"
+          />
+        </div>
+
+        <div class="md:self-end relative h-72 mt-1 mb-4 border-4 md:h-96 md:w-1/2">
+          <div class="absolute w-full bg-amber-800/75 z-50 px-4 py-2">
+            <p class="text-white text-2xl font-bold underline underline-offset-2 mb-2">Ensalada de Pollo</p>
+            <p class="text-white text-base font-semibold">Lechuga, tomate cherry, queso ricota, brotes, pollo, aguacate, maíz amarillo.</p>
+          </div>          
+          <StaticImage
+            src="https://images.pexels.com/photos/3026808/pexels-photo-3026808.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            class="absolute h-full w-full object-cover top-0"
+          />
+        </div>
+
+        <div class="md:self-start relative h-72 mt-1 mb-4 border-4 md:h-96 md:w-1/2">
           <div class="absolute w-full bg-amber-800/75 z-50 px-4 py-2">
             <p class="text-white text-2xl font-bold underline underline-offset-2 mb-2">Ensalada de Pollo</p>
             <p class="text-white text-base font-semibold">Lechuga, tomate cherry, queso ricota, brotes, pollo, aguacate, maíz amarillo.</p>
@@ -133,7 +162,7 @@ export default function IndexPage({data}) {
       {/* Bebidas section */}
       <section id="bebidas-section" class="bg-orange-700/25 flex flex-col md:flex-row justify-center gap-5">
         <div class="relative h-80 md:w-1/3 md:mt-5">
-          <p class="absolute text-3xl text-white font-bold z-50 bg-orange-600/50 w-full py-3 px-4 uppercase">Bebidas</p>
+          <p class="absolute text-6xl text-white z-20 bg-orange-600/50 w-3/4 py-3 px-4 font-cookie">Bebidas</p>
           <StaticImage
             src="https://images.pexels.com/photos/1283219/pexels-photo-1283219.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
             class="absolute h-full w-full object-cover"
@@ -167,9 +196,9 @@ export default function IndexPage({data}) {
       {/* Coffe section */}
       <section id="coffee-section">
         <div class="relative h-180">
-          <div class="absolute flex justify-center items-center px-3 py-5 w-full h-full z-10">
+          <div class="absolute inset-x-1/2 -translate-x-1/2 flex justify-center items-center px-3 py-5 w-full md:w-1/3 h-full z-10">
               <div class="border-4 bg-black/60 px-6 py-6 w-full text-white">
-                <p class="text-2xl text-center font-bold uppercase mb-6">Cafetería y Postres</p>
+                <p class="text-6xl text-center capitalize mb-6 font-cookie">Cafetería y Postres</p>
                 <div class="flex justify-between mb-2">
                   <p class="text-xl">Café</p>
                   <p class="text-xl">$1.00</p>
@@ -224,32 +253,33 @@ export default function IndexPage({data}) {
       </section>
 
       {/* wine section */}
-      <section id="wine-section">
-            <div class="relative border-8 border-rose-900/50 overflow-hidden">
-              <div class="absolute bg-rose-900/50 flex justify-center w-full overflow-x-auto min-h-fit py-5 z-20">
-                  {wines.map((wine, index)=>(
-                    <div class="snap-center text-white flex flex-col items-center justify-center px-6 my-3" key={`wine-${index}`}>
-                      <div class="h-12 rounded-full flex justify-center items-center w-full text-2xl uppercase font-bold mb-4 text-center">{wine.name}</div>
-                      <StaticImage
-                        loading="lazy"
-                        src="https://images.pexels.com/photos/1407846/pexels-photo-1407846.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                        alt={`wine-${index}`}
-                        class="h-64 w-64 rounded-full object-cover border-4 border-whiter"
-                      />
-                      <div class="bg-white rounded-full text-rose-700 flex flex-col justify-center items-center w-32 h-12 -mt-5 z-20 text-2xl font-bold">$ {wine.price}</div>
-                    </div>
-                  ))}
-              </div>
-              <StaticImage
-                src="https://images.pexels.com/photos/391213/pexels-photo-391213.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                class="w-full h-full object-cover"
-              />
+      <section id="wine-section" class="h-96">
+          <div class="relative border-8 border-rose-900 overflow-hidden">
+            <div class="absolute bg-rose-900/50 flex w-full overflow-x-auto py-5 z-20">
+                {wines.map((wine, index)=>(
+                  <div class="snap-center text-white flex flex-col items-center justify-center px-6 my-3" key={`wine-${index}`}>
+                    <div class="h-12 rounded-full flex justify-center items-center w-full text-2xl uppercase font-bold mb-4 text-center">{wine.name}</div>
+                    <StaticImage
+                      loading="lazy"
+                      src="https://images.pexels.com/photos/1407846/pexels-photo-1407846.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                      alt={`wine-${index}`}
+                      class="h-64 w-64 rounded-full object-cover border-4 border-whiter"
+                    />
+                    <div class="bg-white rounded-full text-rose-700 flex flex-col justify-center items-center w-32 h-12 -mt-5 z-20 text-2xl font-bold">$ {wine.price}</div>
+                  </div>
+                ))}
             </div>
+            <StaticImage
+              src="https://images.pexels.com/photos/391213/pexels-photo-391213.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              class="w-full h-96 object-cover"
+            />
+          </div>
       </section>
 
-      <section class="">
+      <section class="bg-white p-4 flex justify-center items-center py-5">
         <StaticImage
           src="../images/sinculpa.jpeg"
+          class="object-cover md:w-1/2 h-full"
         />
       </section>
     </Layout>

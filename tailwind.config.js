@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        cookie: ["Cookie", "Cursive"]
+      },
       spacing: {
         '128': '32rem',
         '140': '35rem',

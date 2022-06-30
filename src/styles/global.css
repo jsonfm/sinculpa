@@ -1,24 +1,56 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
 
-@layer base {
-    html {
-      font-family: Proxima Nova, system-ui, sans-serif;
-    }
+* {
+    font-family: Helvetica, Arial, sans-serif;
 }
-
-body {
-    /* background-image: url(https://images.pexels.com/photos/325703/pexels-photo-325703.jpeg); */
+html {
+    background-image: url(https://images.pexels.com/photos/326333/pexels-photo-326333.jpeg?auto=compress&cs=tinysrgb&w=800);
     object-fit: cover;
     width: 100%;
     background-color: rgb(60, 60, 60);
     background-repeat: repeat;
     image-rendering: pixelated;
-  
+    background-size: fit;
+    box-shadow:inset 0 0 0 2000px rgba(51, 27, 13, 0.445);
 }
+
 
 .gray-gradient {
     background: rgb(154,154,154);
     background: linear-gradient(90deg, rgba(154,154,154,1) 0%, rgba(151,151,167,0.8197872899159664) 48%, rgba(0,212,255,0) 100%);
+}
+
+.pulsate {
+    -webkit-animation: pulsate 5s ease-in;
+    -webkit-animation-iteration-count: infinite; 
+    opacity: 0.7;
+}
+
+.neon-text {
+    color: #fff;
+    text-shadow:
+        0 0 7px rgba(255, 255, 255, 0.78),
+        0 0 10px rgba(255, 255, 255, 0.829),
+        0 0 21px rgba(255, 255, 255, 0.686),
+        0 0 42px rgba(238, 238, 238, 0.337),
+        0 0 82px rgba(228, 228, 228, 0.286),
+        0 0 92px rgba(227, 227, 227, 0.395),
+        0 0 102px rgba(235, 235, 235, 0.34),
+        0 0 151px rgb(239, 239, 239);
+  }
+  
+
+@-webkit-keyframes pulsate {
+    0% { 
+        opacity: 0.7;
+    }
+    50% { 
+        opacity: 1.0;
+    }
+    100% { 
+        opacity: 0.7;
+    }
 }
