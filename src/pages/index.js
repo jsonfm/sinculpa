@@ -11,10 +11,10 @@ const brunchs = [1, 2, 3, 4, 5];
 export default function IndexPage({data}) {
   return (
     <Layout>
-      <section class="relative min-h-screen p-7 mx-3 my-7">
-        <div class="absolute inset-x-1/2 -translate-x-1/2 inset-y-1/2 -translate-y-1/2 py-7 flex flex-col justify-center items-center w-full  md:w-96 h-full bg-amber-900/25 border-4">
+      <section class="flex justify-center items-center min-h-[95vh] 2xl:h-[70vh] px-3 py-5">
+        <div class="bg-amber-900/30 border-4 flex flex-col justify-center items-center w-full md:w-96 h-full py-7 max-h-[800px]">
           <StaticImage
-            class="w-2/3 "
+            class="object-cover"
             placeholder="blurred"
             src="../images/logo.png"
           />
@@ -31,7 +31,7 @@ export default function IndexPage({data}) {
               <p class="text-xl text-center uppercase" onClick={() => scrollTo('#arepas-section')}>Arepas</p>
             </div>
             <div class="m-4">
-              <p class="text-xl text-center uppercase">Platos Fuertes</p>
+              <p class="text-xl text-center uppercase" onClick={() => scrollTo('#strong-section')}>Platos Fuertes</p>
             </div>
             <div class="m-4">
               <p class="text-xl text-center uppercase" onClick={() => scrollTo('#salad-section')}>Ensaladas</p>
@@ -53,8 +53,8 @@ export default function IndexPage({data}) {
       </section>
 
       {/* Brunchs section */}
-      <section id="brunchs-section" class="md:flex min-h-screen">
-        <div class="relative border-4 h-96 md:w-1/2  md:h-screen">
+      <section id="brunchs-section" class="md:flex min-h-[60vh]">
+        <div class="relative border-4 md:w-1/2 min-h-[60vh]">
           <div class="absolute text-white bg-rose-800/75 z-10 w-3/4 top-10 right-0 px-5 py-4">
             <p class="text-6xl capitalize font-cookie">Brunch</p>
             <p class="text-xl font-semibold underline">Pancakes Americano</p>
@@ -65,7 +65,7 @@ export default function IndexPage({data}) {
             class="absolute top-0 object-cover h-full w-full"
           />
         </div>
-        <div class="bg-rose-800/50 flex overflow-x-auto w-full min-h-fit md:w-1/2 py-5">
+        <div class="bg-rose-800/10 flex overflow-x-auto w-full min-h-fit md:w-1/2 py-5">
           {brunchs.map((index) => (
               <div class="snap-center text-white flex flex-col items-center justify-center px-6 my-3" key={index}>
                 <StaticImage
@@ -85,24 +85,24 @@ export default function IndexPage({data}) {
       </section>
 
       {/* Arepas section */}
-      <section id="arepas-section" class="min-h-screen md:flex">
-        <div class="relative order-last h-screen md:w-1/2 border-8 border-orange-400">
-          <div class="absolute z-50 text-white h-48 bg-orange-400/25 px-5 mt-5 py-3">
+      <section id="arepas-section" class="md:flex min-h-[60vh]">
+        <div class="relative order-last border-4 border-orange-400 md:w-1/2 min-h-[60vh]">
+          <div class="absolute z-20 text-white h-48 bg-orange-400/75 px-5 mt-5 py-3">
             <p class="text-6xl font-cookie">Arepas</p>
             <p class="text-xl font-semibold underline">Reina Pepiada</p>
             <p class="text-lg">Pollo, Aguacate, cebolla y perejil.</p>
           </div>
           <StaticImage
             src="../images/bg-arepa.jpeg"
-            class="absolute top-0 w-full object-cover h-full"
+            class="absolute top-0 object-cover w-full h-full"
           />
         </div>
-        <div class="md:h-screen md:w-1/2 bg-orange-500/50">.</div>
+        <div class="h-full md:w-1/2">.</div>
       </section>
 
       {/* Ensaladas section */}
       <section id="salad-section" class="md:flex flex-col items-center justify-center md:px-7">
-        <div class="relative h-96 mb-4 md:h-128 md:w-2/3">
+        <div class="relative h-96 mb-4 md:h-128 md:w-2/3 border-4">
           <div class="absolute bg-lime-900/75 z-10 h-48 px-4 mt-5 w-3/4 py-2">
             <p class="text-white text-7xl font-cookie">Ensaladas</p>
             <p class="text-white text-base font-semibold">Lechuga, tomate cherry, queso ricota, brotes, pollo, aguacate, maíz amarillo.</p>
@@ -159,10 +159,22 @@ export default function IndexPage({data}) {
 
       </section>
 
+      <section id="strong-section" class="bg-white/40 flex flex-col items-center mt-5 min-h-[50vh]">
+        <div class="relative w-full md:w-4/6 h-60 bg-white/40">
+          <StaticImage
+            src="https://images.pexels.com/photos/3186654/pexels-photo-3186654.jpeg?auto=compress&cs=tinysrgb&w=800"
+            class="absolute w-full h-full object-cover border-8 border-red-700"
+          />
+          <div class="absolute bottom-0 inset-x-1/2 -translate-x-1/2 bg-red-700 w-2/3 text-white font-cookie text-6xl text-center">
+            Platos fuertes
+          </div>
+        </div>
+      </section>
+
       {/* Bebidas section */}
       <section id="bebidas-section" class="bg-orange-700/25 flex flex-col md:flex-row justify-center gap-5">
-        <div class="relative h-80 md:w-1/3 md:mt-5">
-          <p class="absolute text-6xl text-white z-20 bg-orange-600/50 w-3/4 py-3 px-4 font-cookie">Bebidas</p>
+        <div class="relative h-80 md:h-128 md:w-1/3">
+          <p class="absolute text-6xl text-white z-20 bg-orange-600/50 w-3/4 py-3 px-4 font-cookie mt-5">Bebidas</p>
           <StaticImage
             src="https://images.pexels.com/photos/1283219/pexels-photo-1283219.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
             class="absolute h-full w-full object-cover"
@@ -245,10 +257,19 @@ export default function IndexPage({data}) {
                 </div>
               </div>
           </div>
-          <StaticImage
-            src="https://images.pexels.com/photos/333523/pexels-photo-333523.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-            class="absolute w-full object-cover h-full"
-          />
+          <div class="absolute flex w-full h-full">
+            <StaticImage
+              src="https://images.pexels.com/photos/333523/pexels-photo-333523.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              class="w-1/2 object-cover h-full"
+            />
+            <div class="w-1/2 h-full">
+              <StaticImage
+                class="w-full h-full object-cover"
+                src="https://images.pexels.com/photos/302896/pexels-photo-302896.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              />
+            </div>
+          </div>
+
         </div>
       </section>
 
