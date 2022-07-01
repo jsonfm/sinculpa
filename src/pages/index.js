@@ -169,6 +169,7 @@ export default function IndexPage({data}) {
             Platos fuertes
           </div>
         </div>
+        
       </section>
 
       {/* Bebidas section */}
