@@ -37,7 +37,7 @@ export default function IndexPage({data}) {
               <p class="text-xl text-center uppercase" onClick={() => scrollTo('#salad-section')}>Ensaladas</p>
             </div>
             <div class="m-4">
-              <p class="text-xl text-center uppercase">Mexicana</p>
+              <p class="text-xl text-center uppercase" onClick={() => scrollTo('#mexican-section')}>Mexicana</p>
             </div>
             <div class="m-4">
               <p class="text-xl text-center uppercase" onClick={() => scrollTo('#bebidas-section')}>Bebidas</p>
@@ -114,7 +114,7 @@ export default function IndexPage({data}) {
         </div>
 
         <div class="md:self-start relative h-72 mt-1 mb-4 border-4 md:h-96 md:w-1/2">
-          <div class="absolute w-full bg-amber-800/75 z-50 px-4 py-2">
+          <div class="absolute w-full bg-amber-800/75 z-20 px-4 py-2">
             <p class="text-white text-2xl font-bold underline underline-offset-2 mb-2">Ensalada de Pollo</p>
             <p class="text-white text-base font-semibold">Lechuga, tomate cherry, queso ricota, brotes, pollo, aguacate, maíz amarillo.</p>
           </div>          
@@ -125,7 +125,7 @@ export default function IndexPage({data}) {
         </div>
 
         <div class="md:self-end relative h-72 mt-1 mb-4 border-4 md:h-96 md:w-1/2">
-          <div class="absolute w-full bg-amber-800/75 z-50 px-4 py-2">
+          <div class="absolute w-full bg-amber-800/75 z-20 px-4 py-2">
             <p class="text-white text-2xl font-bold underline underline-offset-2 mb-2">Ensalada de Pollo</p>
             <p class="text-white text-base font-semibold">Lechuga, tomate cherry, queso ricota, brotes, pollo, aguacate, maíz amarillo.</p>
           </div>          
@@ -136,7 +136,7 @@ export default function IndexPage({data}) {
         </div>
 
         <div class="md:self-start relative h-72 mt-1 mb-4 border-4 md:h-96 md:w-1/2">
-          <div class="absolute w-full bg-amber-800/75 z-50 px-4 py-2">
+          <div class="absolute w-full bg-amber-800/75 z-20 px-4 py-2">
             <p class="text-white text-2xl font-bold underline underline-offset-2 mb-2">Ensalada de Pollo</p>
             <p class="text-white text-base font-semibold">Lechuga, tomate cherry, queso ricota, brotes, pollo, aguacate, maíz amarillo.</p>
           </div>          
@@ -158,7 +158,21 @@ export default function IndexPage({data}) {
         </div>
 
       </section>
+      
+      {/* Mexicana section */}
+      <section id="mexican-section" class="min-h-[50vh] max-h-[70vh]">
+        <div class="relative w-full min-h-[70vh] border-4">
+          <div class="absolute text-white bg-yellow-500/70 h-32 z-10 mt-5 px-5">
+            <p class="text-6xl font-cookie">Mexicana</p>
+          </div>
+          <StaticImage
+            src="https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            class="absolute top-0 w-full h-full object-cover"
+          />
+        </div>
+      </section>
 
+      {/* Strong section */}
       <section id="strong-section" class="bg-white/40 flex flex-col items-center mt-5 min-h-[50vh]">
         <div class="relative w-full md:w-4/6 h-60 bg-white/40">
           <StaticImage
@@ -169,7 +183,6 @@ export default function IndexPage({data}) {
             Platos fuertes
           </div>
         </div>
-        
       </section>
 
       {/* Bebidas section */}
