@@ -7,6 +7,10 @@ const Header = (props) => {
     const [animation, setAnimation] = React.useState('collapse-close');
     const [displayCollapse, setDisplayCollapse] = React.useState(false);
 
+    const sleep = async (delay) => {
+        return await new Promise(r => setTimeout(r, delay));
+    }
+
     const openCollapse = async() =>{
         const delay = 300;
         if(animation == "collapse-close"){
@@ -14,12 +18,16 @@ const Header = (props) => {
         }else{
             setAnimation("collapse-close");
         }
-        await new Promise(r => setTimeout(r, delay));
+        await sleep(delay);
         setDisplayCollapse(!displayCollapse);
     }
 
-    const scrollFromTo = ()=> {
-
+    const scrollFromTo = async (id)=> {
+        const delay = 300;
+        setAnimation("collapse-close");
+        await sleep(delay);
+        setDisplayCollapse(false);
+        scrollTo(id);
     }
 
     return (
@@ -33,40 +41,44 @@ const Header = (props) => {
                             <div class="mt-5">
                                 <div class="grid grid-cols-2 mt-4 text-white">
                                     <div class="m-4 cursor-pointer">
-                                    <p class="text-xl text-center uppercase" onClick={() => scrollTo('#brunchs-section')}>Brunch</p>
+                                    <p class="text-xl text-center uppercase" onClick={async () => scrollFromTo('#brunchs-section')}>Brunch</p>
                                     </div>
                                     <div class="m-4">
-                                    <p class="text-xl text-center uppercase" onClick={() => scrollTo('#arepas-section')}>Arepas</p>
+                                    <p class="text-xl text-center uppercase" onClick={async () => scrollFromTo('#arepas-section')}>Arepas</p>
                                     </div>
                                     <div class="m-4">
-                                    <p class="text-xl text-center uppercase" onClick={() => scrollTo('#strong-section')}>Platos Fuertes</p>
+                                    <p class="text-xl text-center uppercase" onClick={async () => scrollFromTo('#plates-section')}>Platos Fuertes</p>
                                     </div>
                                     <div class="m-4">
-                                    <p class="text-xl text-center uppercase" onClick={() => scrollTo('#salad-section')}>Ensaladas</p>
+                                    <p class="text-xl text-center uppercase" onClick={async () => scrollFromTo('#salad-section')}>Ensaladas</p>
                                     </div>
                                     <div class="m-4">
-                                    <p class="text-xl text-center uppercase" onClick={() => scrollTo('#mexican-section')}>Mexicana</p>
+                                    <p class="text-xl text-center uppercase" onClick={async () => scrollFromTo('#mexican-section')}>Mexicana</p>
                                     </div>
                                     <div class="m-4">
-                                    <p class="text-xl text-center uppercase" onClick={() => scrollTo('#bebidas-section')}>Bebidas</p>
+                                    <p class="text-xl text-center uppercase" onClick={async () => scrollFromTo('#bebidas-section')}>Bebidas</p>
                                     </div>
                                     <div class="m-4">
-                                    <p class="text-xl text-center uppercase" onClick={() => scrollTo('#coffee-section')}>Cafetería y postres</p>
+                                    <p class="text-xl text-center uppercase" onClick={async () => scrollFromTo('#coffee-section')}>Cafetería y postres</p>
                                     </div>
                                     <div class="m-4">
-                                    <p class="text-xl text-center uppercase" onClick={() => scrollTo('#wine-section')}>Vinos</p>
+                                    <p class="text-xl text-center uppercase" onClick={async () => scrollFromTo('#wine-section')}>Vinos</p>
                                     </div>
                                 </div>                            
                             </div>
-                            <div class="text-white text-5xl flex gap-4 mt-auto mb-5 h-16">
-                                <a href="https://www.instagram.com/sinculpaloja/" target="_blank"><RiInstagramFill/></a>
-                                <RiFacebookCircleFill/>
+                            <div class="text-white text-5xl flex gap-4 mt-auto mb-5 h-16 ">
+                                <a href="https://www.instagram.com/sinculpaloja/" target="_blank" rel="noreferrer" class="ease-in duration-300">
+                                    <RiInstagramFill/>
+                                </a>
+                                <a href="https://www.facebook.com/sinculpaloja" target="_blank" rel="noreferrer" class="ease-in duration-300" >
+                                    <RiFacebookCircleFill/>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
                 }
-                <button onClick={openCollapse}  class="fixed bottom-28 right-5 z-50 rounded-full w-16 h-16 drop-shadow-2xl">
+                <button onClick={openCollapse}  class={`fixed bottom-28 right-5 z-50 rounded-full w-16 h-16 drop-shadow-2xl ease-in duration-300 ${!displayCollapse && 'bg-orange-700/50'}`}>
                     <StaticImage
                         src="../../images/spiralwhite.png"
                         class="w-full h-full animate-spin-slow"

@@ -15,19 +15,19 @@ const salads = [
         "name": "Ensalada sin Culpa",
         "ingredients": "Lechuga, tomate cherry, choclo amarillo, crotones, aderezo sin culpa, queso mozarella, fresas, pollo, aguacate.",
         "price": 5.00,
-        "image": "https://images.pexels.com/photos/1213710/pexels-photo-1213710.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        "image": "https://images.pexels.com/photos/4871174/pexels-photo-4871174.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     },
     {
         "name": "Ensalada Mexicana",
         "ingredients": "Lechuga, pico de gallo, queso mozarella, pollo, guacamote, nachos.",
         "price": 5.00,
-        "image": "https://images.pexels.com/photos/1213710/pexels-photo-1213710.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        "image": "https://images.pexels.com/photos/3070970/pexels-photo-3070970.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     },
     {
         "name": "Ensalada Cesar",
         "ingredients": "Lechuga, crotones, queso parmesano, aderezo césar, pollo, tocino.",
         "price": 5.00,
-        "image": "https://images.pexels.com/photos/1213710/pexels-photo-1213710.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        "image": "https://images.pexels.com/photos/1833332/pexels-photo-1833332.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     },
 ]
 
