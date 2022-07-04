@@ -1,6 +1,6 @@
 import * as React from "react";
 import { MdFoodBank } from "react-icons/md";
-
+import { useSwipeable } from "react-swipeable";
 
 const Carousel = ({
     slides = [], 
@@ -24,10 +24,15 @@ const Carousel = ({
         setCurrent(index);
     }
 
+    const handlers = useSwipeable({ 
+        onSwipedRight: next,
+        onSwipedLeft: prev
+    })
+
     const currentElement = slides[current];
 
     return (
-        <div class="carousel w-full flex flex-col justify-center items-center">
+        <div class="carousel w-full flex flex-col justify-center items-center" {...handlers}>
             <div class="realtive flex justify-center w-full max-w-[600px]">
                 <div class="w-8 h-fit"></div>
                 <div class="flex justify-center overflow-x-auto w-full">

@@ -1,9 +1,9 @@
 import * as React from "react";
 import { Carousel } from '../components/Carousel';
-import { graphql } from "gatsby";
-import { StaticImage, GatsbyImage } from "gatsby-plugin-image";
+import { StaticImage } from "gatsby-plugin-image";
 import { Layout } from "../components/Layout";
 import { brunchs } from "../api/brunchs";
+import { arepas } from "../api/arepas";
 import { wines } from "../api/wines";
 import { salads } from "../api/salads";
 import { mexicans }from "../api/mexicans";
@@ -11,7 +11,6 @@ import { plates } from "../api/plates";
 import { coffees } from "../api/coffees";
 import scrollTo from 'gatsby-plugin-smoothscroll';
 
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 
 export default function IndexPage({data}) {
@@ -57,7 +56,9 @@ export default function IndexPage({data}) {
           </div>
         </div>
       </section>
-
+      {/* <section class="bg-white h-16 w-full flex justify-center items-center mb-5">
+        <p class="text-6xl font-cookie">Busca el equilibrio</p>
+      </section> */}
       {/* Brunchs section */}
       <section id="brunchs-section" class="min-h-[60vh]">
         <div class="relative border-4 md:w-1/2 min-h-[60vh] text-white">
@@ -81,19 +82,34 @@ export default function IndexPage({data}) {
       </section>
 
       {/* Arepas section */}
-      <section id="arepas-section" class="md:flex min-h-[60vh]">
-        <div class="relative order-last border-4 border-orange-400 md:w-1/2 min-h-[60vh]">
-          <div class="absolute z-20 text-white h-48 bg-orange-400/75 px-5 mt-5 py-3">
+      <section id="arepas-section" class="min-h-[60vh] text-center">
+        <div class="relative md:w-1/2 mx-auto min-h-[60vh]">
+          <div class="absolute z-20 text-white h-48 bg-orange-500/75 px-5 mt-5 py-5">
             <p class="text-6xl font-cookie">Arepas</p>
-            <p class="text-xl font-semibold underline">Reina Pepiada</p>
-            <p class="text-lg">Pollo, Aguacate, cebolla y perejil.</p>
+            <p class="text-xl font-semibold underline">{arepas[0].name}</p>
+            <p class="text-lg">{arepas[0].ingredients}</p>
+            <p class="text-2xl">${arepas[0].price.toFixed(2)}</p>
           </div>
-          <StaticImage
-            src="../images/bg-arepa.jpeg"
-            class="absolute top-0 object-cover w-full h-full"
+          <img
+            src={arepas[0].image}
+            class="absolute top-0 object-cover w-full h-full border"
           />
         </div>
-        <div class="h-full md:w-1/2">.</div>
+        <div class="min-h-128 grid md:grid-cols-3">
+          {arepas.slice(1).map((arepa, index) => (
+            <div class="flex flex-col border" key={`arepa-${index}`}>
+              <img
+                src={arepa.image}
+                class="h-64 w-auto object-cover"
+              />
+              <div class="text-white text-center bg-orange-500/90 h-40 flex flex-col items-center pt-3 px-3">
+                <p class="text-2xl underline underline-offset-2 mb-1">{arepa.name}</p>
+                <p class="capitalize text-lg">{arepa.ingredients}</p>
+                <p class="font-bold mt-2 text-2xl mb-4">$ {arepa.price.toFixed(2)}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* Ensaladas section */}
@@ -137,7 +153,7 @@ export default function IndexPage({data}) {
         </div>
         <div class="relative grid md:grid-cols-2 text-white">
           {mexicans.map((mexican, index) => (
-            <div class="flex flex-col text-white min-h-64">
+            <div class="flex flex-col border text-white min-h-64">
               <img
                 class="w-full h-full"
                 src={mexican.image}
@@ -165,7 +181,7 @@ export default function IndexPage({data}) {
         </div>
         <div class="grid md:grid-cols-2">
         {plates.map((plate, index) => (
-          <div class="flex flex-col min-h-72 border-4">
+          <div class="flex flex-col min-h-72 border">
             <img
               src={plate.image}
               class="h-64 w-auto object-cover"
@@ -186,7 +202,7 @@ export default function IndexPage({data}) {
         <div class="relative h-80 min-h-96 md:min-h-full md:w-1/2">
           <p class="absolute text-6xl text-white z-20 bg-orange-600/50 w-3/4 py-3 px-4 font-cookie mt-5">Bebidas</p>
           <StaticImage
-            src="https://images.pexels.com/photos/1283219/pexels-photo-1283219.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            src="https://images.pexels.com/photos/96974/pexels-photo-96974.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
             class="absolute h-full w-full object-cover"
           />
         </div>
@@ -222,7 +238,7 @@ export default function IndexPage({data}) {
               <div class="border-4 bg-black/70 px-6 py-6 w-full h-full text-white">
                 <p class="text-6xl text-center capitalize mb-6 font-cookie">Cafetería y Postres</p>
                 {coffees.map((coffee, index) => (
-                <div class="flex justify-between mb-2">
+                <div class="flex justify-between mb-2" key={`coffee-${index}`}>
                   <p class="text-xl">{coffee.name}</p>
                   <p class="text-xl">$ {coffee.price.toFixed(2)}</p>
                 </div>
@@ -245,9 +261,9 @@ export default function IndexPage({data}) {
       </section>
 
       {/* wine section */}
-      <section id="wine-section" class="min-h-[80vh] border-8 border-rose-900">
+      <section id="wine-section" class="min-h-[80vh] max-h-[20rem] border-8 border-rose-900">
           <div class="relative">
-            <div class="absolute flex justify-center items-center overflow-x-auto py-5 z-10 border-4 h-full w-full">
+            <div class="absolute flex justify-center items-center overflow-x-auto py-5 z-10 border-4 h-full w-full bg-rose-900/50">
                 <Carousel
                   slides={wines}
                   cardPriceStyle="bg-white text-rose-900 font-bold text-2xl px-4 py-2 -mt-3 mb-4 self-center rounded-full"
