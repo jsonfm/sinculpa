@@ -16,6 +16,7 @@
     "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.3",
     "gatsby": "^4.17.1",
     "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-image": "^2.17.0",
@@ -27,6 +28,7 @@
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-icons": "^4.4.0",
+    "react-redux": "^8.0.2",
     "react-responsive-carousel": "^3.2.23",
     "react-swipeable": "^7.0.0"
   },

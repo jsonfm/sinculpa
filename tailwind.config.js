@@ -6,7 +6,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        cookie: ["Cookie", "Cursive"]
+        cookie: ["Cookie", "Cursive"],
+        'display': ['Oswald'],
+        'body': ["Open Sans"],
       },
       spacing: {
         '128': '32rem',

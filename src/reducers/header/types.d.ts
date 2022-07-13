@@ -1,0 +1,3 @@
+interface HeaderState {
+  showMenuCollapse: boolean;
+}

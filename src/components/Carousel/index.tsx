@@ -4,10 +4,10 @@ import { useSwipeable } from "react-swipeable";
 
 
 const Carousel = ({
-    slides = [], 
-    maxViewElements=4, 
+    slides = [],
+    maxViewElements=4,
     cardIngredientsStyle='bg-orange-500/50 text-white mt-5 px-5 h-44 w-full rounded-lg text-justify flex flex-col items-center justify-center border-4',
-    cardImageStyle='object-cover rounded-full h-[300px] w-full ease-in duration-300 border-4',
+    cardImageStyle='object-cover rounded-full h-[300px] w-[300px] ease-in duration-300 border-4',
     cardPriceStyle='bg-orange-500/50 border-4 self-end mr-3 text-xl rounded-lg px-5 py-2 mt-2'
     }: CarouselProps) => {
 
@@ -25,7 +25,7 @@ const Carousel = ({
         setCurrent(index);
     }
 
-    const handlers = useSwipeable({ 
+    const handlers = useSwipeable({
         onSwipedRight: next,
         onSwipedLeft: prev
     })

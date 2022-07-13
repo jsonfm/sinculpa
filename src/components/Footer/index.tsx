@@ -1,13 +1,13 @@
 import * as React from "react"
 
 
-const Footer = (props) => {
+const Footer = () => {
     return (
-        <footer class="bg-white h-16 flex justify-center items-center">
+        <footer className="bg-white h-16 flex justify-center items-center">
             Todos los derechos reservados
         </footer>
     )
-} 
+}
 
 
 export { Footer };

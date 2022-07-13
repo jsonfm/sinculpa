@@ -1,4 +1,4 @@
-const wines = [
+const wines: Product[] = [
     {
       "name": "Copa de vino",
       "price": 3.50,

@@ -3,4 +3,5 @@ interface Product {
     price: number,
     ingredients?: string,
     image?: string,
+    category?: Category,
 }
