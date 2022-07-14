@@ -10,7 +10,7 @@ const GridFood = ({ food }: GridFoodProps) => {
             src={item.image}
             className="w-full h-48 md:h-64 lg:h-72 2xl:h-96 border"
           />
-          <div className="text-white bg-green-700/80 pt-3 h-40">
+          <div className="text-white bg-green-600 pt-3 h-40">
             <p className="text-xl font-bold bg-white text-green-700 w-2/3 px-5 mb-2">{item.name}</p>
             <p className="h-[40%] overflow-y-auto px-5 my-auto">{item.ingredients}</p>
             <p className="bg-white text-green-900 text-end px-5 font-semibold text-xl mt-2">$ {item.price.toFixed(2)}</p>
