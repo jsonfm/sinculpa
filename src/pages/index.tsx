@@ -16,15 +16,16 @@ import { mexicans }from "@/api/mexicans";
 import { plates } from "@/api/plates";
 import { coffees } from "@/api/coffees";
 import { cocktails } from "@/api/cocktails";
+import { dinners } from "@/api/dinners";
 
 
 
 export default function IndexPage() {
   return (
     <>
-      <section className="w-full min-h-[100vh] grid lg:grid-cols-2 bg-gradient-to-r from-neutral-600 to-amber-600 text-white py-2">
+      <section className="w-full min-h-[100vh] grid lg:grid-cols-2 place-content-center bg-gradient-to-r from-neutral-600 to-amber-600 text-white py-2">
         <div className="hidden lg:flex items-center justify-center font-cookie text-7xl">Busca el equilibrio</div>
-        <div className="flex flex-col items-center  mx-auto w-[22rem] md:w-[23rem] border-4 min-h-[95vh] pt-10 lg:pt-5 lg:pb-12">
+        <div className="place-self-start flex flex-col items-center mx-auto lg:ml-3 w-[22rem] md:w-[23rem] border-2 border-white min-h-[95vh] pt-10 lg:pt-5 lg:pb-12">
           <StaticImage
             alt="logo"
             src="../images/logo.png"
@@ -63,6 +64,7 @@ export default function IndexPage() {
         {arepas.map((item, index) =>(
           <div className="flex flex-col w-full border-4 border-white" key={index}>
             <img
+              loading="lazy"
               src={item.image}
               className="w-full h-48 md:h-64 lg:h-72 2xl:h-96"
             />
@@ -76,11 +78,31 @@ export default function IndexPage() {
         </div>
       </section>
 
-      <section className="min-h-[100vh] bg-amber-600 py-12">
+      <section id="dinners-section" className="w-full min-h-[100vh] py-12 md:px-16 xl:px-32">
+        <p className="pt-6 pb-12 font-cookie text-6xl text-blue-700 text-center">Cenas</p>
+        <div className="grid md:grid-cols-2 gap-y-5 place-content-center place-items-center container-lg mx-auto">
+          {dinners.map((dinner, index) => (
+            <div className="w-[95%] border-2  border-blue-700 text-white" key={index}>
+              <img
+                loading="lazy"
+                src={dinner.image}
+                className="w-full h-48 md:h-64 lg:h-72 2xl:h-96"
+              />
+              <div className="text-blue-700 h-48 py-2 px-4 lg:px-8">
+                <p className="bg-white text-blue-700 text-xl font-bold py-2">{dinner.name}</p>
+                <div className="h-[50%] pt-2 overflow-y-auto overscroll-y-auto">{dinner.ingredients}</div>
+                <div className="text-xl font-bold text-end">$ {dinner.price.toFixed(2)}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="cocktails-section" className="min-h-[100vh] bg-amber-600 py-16">
         <p className="text-center text-white font-bold font-cookie text-6xl lg:text-7xl mb-12">Cócteles bajos en calorías</p>
         <div className="grid gap-3 w-80 md:w-[30rem] mx-auto">
           {cocktails.map((cocktail, index) =>(
-            <div className="flex justify-between text-white text-xl">
+            <div className="flex justify-between text-white text-xl" key={index}>
               <div className="flex flex-col w-4/6 md:w-5/6">
                 <p className="font-bold">{cocktail.name}</p>
                 <p className="text-base"> {cocktail.ingredients}</p>

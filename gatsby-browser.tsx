@@ -1,5 +1,6 @@
 // React
 import React from "react";
+import { ParallaxProvider } from 'react-scroll-parallax';
 
 // Store
 import { Provider } from "react-redux";
@@ -14,10 +15,12 @@ export const wrapRootElement = ({ element }): JSX.Element => {
   const store = createStore();
 
   return (
-    <Provider store={store}>
-      <Layout>
-        {element}
-      </Layout>
-    </Provider>
+    <ParallaxProvider>
+      <Provider store={store}>
+        <Layout>
+          {element}
+        </Layout>
+      </Provider>
+    </ParallaxProvider>
   );
 }
