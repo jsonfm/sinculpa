@@ -1,44 +1,44 @@
 // React
-import * as React from "react"
+import * as React from "react";
+
 // Icons
-import { RiInstagramFill, RiFacebookCircleFill } from "react-icons/ri";
+import { RiInstagramFill } from "react-icons/ri";
 
 // Gatsby Plugins
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import { StaticImage} from "gatsby-plugin-image";
 
 // Context
-// import { Ctx } from "@/store/context";
-import { useSelector, connect } from 'react-redux';
+import { Dispatch} from "redux";
+import { useSelector, useDispatch } from 'react-redux';
 
 
-const Header = ({ dispatch }) => {
-    // console.log("dispatch: ", dispatch)
+const Header = () => {
+
     const [animation, setAnimation] = React.useState('collapse-close');
-    // const [ showMenuCollapse, setMenuCollapse] = React.useState(false) ;
-    const showMenuCollapse = useSelector((state) => state.header.showMenuCollapse);
-    console.log("showMenuCollapse: ", showMenuCollapse)
+    const showMenuCollapse = useSelector((state: ApplicationState) => state.headerState.showMenuCollapse);
+    const dispatch: Dispatch<HeaderAction> = useDispatch();
 
-    const sleep = async (delay: number) => {
+    console.log("showMenuCollapse: ", showMenuCollapse);
+
+    const sleep = async (delay: number = 300) => {
         return await new Promise(r => setTimeout(r, delay));
     }
 
-    const openCollapse = async() =>{
-        const delay = 300;
+    const openCollapse = async() => {
         if(animation == "collapse-close"){
             setAnimation("collapse-open");
         }else{
             setAnimation("collapse-close");
         }
-        await sleep(delay);
-        dispatch({ type: "TOGGLE_HEADER_MENU_COLLAPSE", payload: !showMenuCollapse });
+        await sleep(300);
+        dispatch({ type: "@header/ToggleHeaderMenuCollapse", payload: !showMenuCollapse });
     }
 
-    const scrollFromTo = async (id:string)=> {
-        const delay = 300;
+    const scrollFromTo = async (id:string) => {
         setAnimation("collapse-close");
-        await sleep(delay);
-        // dispatch({ type: "TOGGLE_HEADER_MENU_COLLAPSE", payload: false });
+        await sleep(300);
+        dispatch({ type: "@header/ToggleHeaderMenuCollapse", payload: false });
         scrollTo(id);
     }
 
@@ -82,7 +82,6 @@ const Header = ({ dispatch }) => {
                     </div>
                 </div>
                 }
-
                 <div className="flex flex-col text-white items-center gap-5 fixed bottom-28 right-5 z-50">
                   <div className="text-4xl">
                     <a href="https://www.instagram.com/sinculpaloja/" target="_blank" rel="noreferrer" className="ease-in duration-300">
@@ -102,6 +101,4 @@ const Header = ({ dispatch }) => {
     )
 }
 
-const header = connect()(Header)
-
-export { header as Header };
+export { Header };

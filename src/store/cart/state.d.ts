@@ -1,0 +1,3 @@
+interface CartState {
+  cartProducts: Product[]
+}
