@@ -49,32 +49,32 @@ const Header = () => {
                 <div className={`fixed top-0 w-full h-screen z-50 text-white overflow-hidden bg-amber-700/80 ${animation}`}>
                     <div className="relative top-0 flex-col items-center h-full">
                         <div className="h-full border-4 text-white flex flex-col items-center">
-                            <p className="font-cookie text-6xl mt-6">Menú</p>
+                            <p className="font-cookie text-6xl mt-6 underline underline-offset-2">Menú</p>
                             <div className="mt-5">
-                                <div className="grid grid-cols-2 mt-4 text-white">
+                                <div className="grid grid-cols-2 mt-4 text-white font-cookie text-4xl text-center">
                                     <div className="m-4 cursor-pointer">
-                                    <p className="text-xl text-center uppercase" onClick={async () => scrollFromTo('#brunchs-section')}>Brunch</p>
+                                    <p onClick={async () => scrollFromTo('#brunchs-section')}>Brunch</p>
                                     </div>
                                     <div className="m-4">
-                                    <p className="text-xl text-center uppercase" onClick={async () => scrollFromTo('#arepas-section')}>Arepas</p>
+                                    <p onClick={async () => scrollFromTo('#arepas-section')}>Arepas</p>
                                     </div>
                                     <div className="m-4">
-                                    <p className="text-xl text-center uppercase" onClick={async () => scrollFromTo('#plates-section')}>Platos Fuertes</p>
+                                    <p onClick={async () => scrollFromTo('#plates-section')}>Platos Fuertes</p>
                                     </div>
                                     <div className="m-4">
-                                    <p className="text-xl text-center uppercase" onClick={async () => scrollFromTo('#salad-section')}>Ensaladas</p>
+                                    <p onClick={async () => scrollFromTo('#salad-section')}>Ensaladas</p>
                                     </div>
                                     <div className="m-4">
-                                    <p className="text-xl text-center uppercase" onClick={async () => scrollFromTo('#mexican-section')}>Mexicana</p>
+                                    <p onClick={async () => scrollFromTo('#mexican-section')}>Mexicana</p>
                                     </div>
                                     <div className="m-4">
-                                    <p className="text-xl text-center uppercase" onClick={async () => scrollFromTo('#bebidas-section')}>Bebidas</p>
+                                    <p onClick={async () => scrollFromTo('#bebidas-section')}>Bebidas</p>
                                     </div>
                                     <div className="m-4">
-                                    <p className="text-xl text-center uppercase" onClick={async () => scrollFromTo('#coffee-section')}>Cafetería y postres</p>
+                                    <p onClick={async () => scrollFromTo('#cocktails-section')}>Cócteles</p>
                                     </div>
                                     <div className="m-4">
-                                    <p className="text-xl text-center uppercase" onClick={async () => scrollFromTo('#wine-section')}>Vinos</p>
+                                    <p onClick={async () => scrollFromTo('#dinners-section')}>Meriendas</p>
                                     </div>
                                 </div>
                             </div>
@@ -88,7 +88,7 @@ const Header = () => {
                         <RiInstagramFill/>
                     </a>
                   </div>
-                  <button onClick={openCollapse}  className={` rounded-full w-16 h-16 drop-shadow-2xl ease-in duration-300`}>
+                  <button onClick={openCollapse}  className={` rounded-full w-16 h-16 drop-shadow-2xl ease-in duration-300 bg-transparent`}>
                       <StaticImage
                           alt="logo"
                           src="../../images/spiralwhite.png"

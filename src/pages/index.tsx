@@ -17,13 +17,16 @@ import { plates } from "@/api/plates";
 import { coffees } from "@/api/coffees";
 import { cocktails } from "@/api/cocktails";
 import { dinners } from "@/api/dinners";
+import { yogurts } from "@/api/yogurts";
+
+import scrollTo from 'gatsby-plugin-smoothscroll';
 
 
 
 export default function IndexPage() {
   return (
     <>
-      <section className="w-full min-h-[100vh] grid lg:grid-cols-2 place-content-center bg-gradient-to-r from-neutral-600 to-amber-600 text-white py-2">
+      <section className="w-full min-h-[100vh] grid lg:grid-cols-2 place-content-center bg-gradient-to-t from-zinc-700 to-amber-900 text-white py-2">
         <div className="hidden lg:flex items-center justify-center font-cookie text-7xl">Busca el equilibrio</div>
         <div className="place-self-start flex flex-col items-center mx-auto lg:ml-3 w-[22rem] md:w-[23rem] border-2 border-white min-h-[95vh] pt-10 lg:pt-5 lg:pb-12">
           <StaticImage
@@ -32,33 +35,55 @@ export default function IndexPage() {
             placeholder="blurred"
             className="w-80"
           />
-          <p className="text-5xl mt-12 mb-8 font-cookie">Menú</p>
+          <p className="text-5xl mt-12 mb-8 font-cookie underline underline-offset-2">Menú</p>
           <div className="grid grid-cols-2 gap-7 place-content-center text-center font-cookie text-3xl">
-            <p>Arepas</p>
-            <p>Ensaladas</p>
-            <p>A toda hora</p>
-            <p>Meriendas</p>
-            <p>Cócteles</p>
-            <p>Bebidas</p>
+            <p onClick={() => scrollTo("#arepas-section")} className="hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300">Arepas</p>
+            <p onClick={() => scrollTo("#salads-section")} className="hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300">Ensaladas</p>
+            <p className="hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300">A toda hora</p>
+            <p onClick={() => scrollTo("#dinners-section")} className="hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300">Meriendas</p>
+            <p onClick={() => scrollTo("#cocktails-section")} className="hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300">Cócteles</p>
+            <p onClick={() => scrollTo("#fruits-section")} className="hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300">Ensaladas de Frutas</p>
           </div>
           <p className="mt-auto lg:hidden font-cookie text-2xl self-start px-5 mb-4">Busca el equilibrio</p>
         </div>
       </section>
-      <section className="w-full min-h-[100vh] grid lg:grid-cols-2 place-content-center bg-rose-900 py-12">
-        <Carousel
-          slides={brunchs}
-        />
-        <div className="mt-5 text-white w-full h-full flex items-center justify-center font-cookie text-4xl lg:text-7xl">Dale sabor a tu vida.</div>
+
+      <section className="w-full min-h-[100vh] bg-zinc-700 flex items-center justify-center">
+        <div className="uppercase text-xl text-yellow-500 w-[60%]">Nadie llega a la tierra prometida sin antes pasar por el desierto</div>
       </section>
 
-      <section id="salads-section"  className="min-h-[90vh] py-12">
-        <p className="text-center text-green-700 font-cookie text-6xl lg:text-7xl mb-12">Ensaladas</p>
+      <section id="salads-section"  className="min-h-[130vh] py-12 pb-32 bg-[#407d1b]">
+        <p className="text-center text-white font-cookie text-6xl lg:text-7xl mb-12">Ensaladas</p>
         <GridFood
           food={salads}
         />
       </section>
 
-      <section id="arepas-section" className="w-full min-h-[100vh] bg-orange-500 py-12">
+      <section className="w-full min-h-[100vh] flex items-center justify-center pb-32">
+        <div className="font-cookie text-orange-900 text-6xl">
+          <p>Vive,</p>
+          <p className="pl-16">Siente,</p>
+          <p className="pl-32">Come</p>
+        </div>
+      </section>
+
+      <section id="fruits-section" className="w-full min-h-[110vh] grid lg:grid-cols-2 place-content-center bg-rose-900 py-12 pb-32">
+        <div className="text-white flex flex-col gap-5 px-4 md:px-10 lg:px-16 lg:border-r-4 container-lg-12">
+          <p className="font-cookie text-white text-5xl mb-4 lg:mb-8 text-center">Ensalada de frutas</p>
+          {yogurts.map((yogurt, index) => (
+            <div className="flex justify-between">
+              <div className="w-4/6">
+                <p className="font-bold text-xl">{yogurt.name}</p>
+                <p>{yogurt.ingredients}</p>
+              </div>
+              <p className="font-bold text-lg">$ {yogurt.price.toFixed(2)}</p>
+            </div>
+          ))}
+        </div>
+        <div className="mt-5 text-white w-full h-full flex items-center justify-center font-cookie text-2xl lg:text-7xl">Dale sabor a tu vida.</div>
+      </section>
+
+      <section id="arepas-section" className="w-full min-h-[100vh] bg-orange-500 py-12 pb-32">
         <p className="text-white text-center font-bold font-cookie text-6xl lg:text-7xl mb-12">Arepas</p>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 place-content-center container-lg mx-auto  px-4">
         {arepas.map((item, index) =>(
@@ -78,7 +103,7 @@ export default function IndexPage() {
         </div>
       </section>
 
-      <section id="dinners-section" className="w-full min-h-[100vh] py-12 md:px-16 xl:px-32">
+      <section id="dinners-section" className="w-full min-h-[100vh] py-12 pb-32 md:px-16 xl:px-32">
         <p className="pt-6 pb-12 font-cookie text-6xl text-blue-700 text-center">Cenas</p>
         <div className="grid md:grid-cols-2 gap-y-5 place-content-center place-items-center container-lg mx-auto">
           {dinners.map((dinner, index) => (
@@ -98,7 +123,7 @@ export default function IndexPage() {
         </div>
       </section>
 
-      <section id="cocktails-section" className="min-h-[100vh] bg-amber-600 py-16">
+      <section id="cocktails-section" className="min-h-[100vh] bg-amber-600 py-32">
         <p className="text-center text-white font-bold font-cookie text-6xl lg:text-7xl mb-12">Cócteles bajos en calorías</p>
         <div className="grid gap-3 w-80 md:w-[30rem] mx-auto">
           {cocktails.map((cocktail, index) =>(
@@ -110,34 +135,6 @@ export default function IndexPage() {
               <p>$ {cocktail.price.toFixed(2)}</p>
             </div>
           ))}
-        </div>
-
-      </section>
-
-      <section id="coffee-section" className="relative min-h-[125vh] py-12 bg-amber-800">
-        <div className="absolute top-0 w-full h-full grid lg:grid-cols-2">
-          <StaticImage
-            className="h-full w-full"
-            alt="coffee1"
-            src="https://images.pexels.com/photos/894695/pexels-photo-894695.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-          />
-          <StaticImage
-            className="h-full w-full"
-            alt="coffee2"
-            src="https://images.pexels.com/photos/3879495/pexels-photo-3879495.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-          />
-        </div>
-        <div className="absolute top-0 w-full h-full grid place-content-center px-5 z-30">
-          <div className="flex flex-col bg-black/50  w-[330px] md:w-[400px] max-w-[600px] min-h-[650px] text-white border-4 px-6 py-6">
-            <p className="text-6xl font-cookie text-center mb-12">Café y postrería</p>
-            {coffees.map((coffee, index)=>(
-              <div className="flex justify-between my-1 text-xl" key={index}>
-                <p>{coffee.name}</p>
-                <p>$ {coffee.price.toFixed(2)}</p>
-              </div>
-            ))}
-            <p className="font-cookie mt-auto">La vida es profunda, como el café de tus ojos.</p>
-          </div>
         </div>
       </section>
     </>
