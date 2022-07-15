@@ -26,17 +26,17 @@ import scrollTo from 'gatsby-plugin-smoothscroll';
 export default function IndexPage() {
   return (
     <>
-      <section className="w-full min-h-[100vh] grid lg:grid-cols-2 place-content-center bg-gradient-to-t from-zinc-700 to-amber-900 text-white py-2">
+      <section className="w-full min-h-[100vh] py-8 lg:pt-32 lg:pb-32 grid lg:grid-cols-2 place-content-center bg-woods bg-cover  text-white ease-out duration-300 z-10">
         <div className="hidden lg:flex items-center justify-center font-cookie text-7xl">Busca el equilibrio</div>
-        <div className="place-self-start flex flex-col items-center mx-auto lg:ml-3 w-[22rem] md:w-[23rem] border-2 border-white min-h-[95vh] pt-10 lg:pt-5 lg:pb-12">
+        <div className="place-self-start flex flex-col items-center mx-auto lg:ml-3 w-[22rem] md:w-[23rem] bg-amber-900/30 border-2 border-white min-h-[95vh] pt-10 lg:pt-5 lg:pb-12 z-10">
           <StaticImage
             alt="logo"
             src="../images/logo.png"
             placeholder="blurred"
-            className="w-80"
+            className="w-80 z-10"
           />
           <p className="text-5xl mt-12 mb-8 font-cookie underline underline-offset-2">Menú</p>
-          <div className="grid grid-cols-2 gap-7 place-content-center text-center font-cookie text-3xl">
+          <div className="grid grid-cols-2 gap-7 place-content-center text-center font-cookie text-3xl z-10">
             <p onClick={() => scrollTo("#arepas-section")} className="hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300">Arepas</p>
             <p onClick={() => scrollTo("#salads-section")} className="hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300">Ensaladas</p>
             <p className="hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300">A toda hora</p>
@@ -45,6 +45,8 @@ export default function IndexPage() {
             <p onClick={() => scrollTo("#fruits-section")} className="hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300">Ensaladas de Frutas</p>
           </div>
           <p className="mt-auto lg:hidden font-cookie text-2xl self-start px-5 mb-4">Busca el equilibrio</p>
+          v
+          v
         </div>
       </section>
 
@@ -104,7 +106,7 @@ export default function IndexPage() {
       </section>
 
       <section id="dinners-section" className="w-full min-h-[100vh] py-12 pb-32 md:px-16 xl:px-32">
-        <p className="pt-6 pb-12 font-cookie text-6xl text-blue-700 text-center">Cenas</p>
+        <p className="pt-6 pb-12 font-cookie text-6xl text-blue-700 text-center">Meriendas</p>
         <div className="grid md:grid-cols-2 gap-y-5 place-content-center place-items-center container-lg mx-auto">
           {dinners.map((dinner, index) => (
             <div className="w-[95%] border-2  border-blue-700 text-white" key={index}>

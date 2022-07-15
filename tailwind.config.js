@@ -20,7 +20,10 @@ module.exports = {
       },
       animation: {
         'spin-slow': 'spin 8s linear infinite',
-      }
+      },
+      backgroundImage: {
+        'woods': "url('https://images.pexels.com/photos/326333/pexels-photo-326333.jpeg')"
+      },
     },
   },
   plugins: [],

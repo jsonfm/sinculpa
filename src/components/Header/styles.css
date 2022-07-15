@@ -1,0 +1,49 @@
+
+.propagation-increase {
+  animation: propagation-increase-animation 3.5s;
+  animation-fill-mode: forwards;
+}
+
+.propagation-decrease {
+  animation: propagation-decrease-animation .3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes propagation-increase-animation {
+  0% {
+    transform: scale(1);
+    background: transparent !important;
+  }
+  100% {
+    transform: scale(100);
+  }
+}
+
+@keyframes propagation-decrease-animation {
+  0% {
+    transform: scale(100);
+
+  }
+  100% {
+    transform: scale(1);
+    background-color: rgba(255, 255, 255, 0) !important;
+  }
+}
+
+
+.jump-animation {
+  animation-duration: 1.5s;
+  animation-iteration-count: forwards;
+  animation-name: jump-animation;
+  animation-timing-function: ease;
+}
+
+@keyframes jump-animation {
+  0%   { transform: scale(1, 1)      translateY(0); }
+  10%  { transform: scale(1, 1)   translateY(0); }
+  30%  { transform: scale(1, 1)   translateY(-50px); }
+  50%  { transform: scale(1,1) translateY(0); }
+  57%  { transform: scale(1,1)      translateY(-5px); }
+  64%  { transform: scale(1,1)      translateY(0); }
+  100% { transform: scale(1,1)      translateY(0); }
+}
