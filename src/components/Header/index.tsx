@@ -22,8 +22,6 @@ const Header = () => {
     const showMenuCollapse = useSelector((state: ApplicationState) => state.headerState.showMenuCollapse);
     const dispatch: Dispatch<HeaderAction> = useDispatch();
 
-
-
     const sleep = async (delay: number = 300) => {
         return await new Promise(r => setTimeout(r, delay));
     }
@@ -47,8 +45,16 @@ const Header = () => {
         scrollTo(id);
     }
 
-    const scrolling = () => {
-      setShowCollapseButtons(window.pageYOffset > 400)
+    const scrolling = async() => {
+      if (window.pageYOffset > 200){
+        setShowCollapseButtons(true);
+      }else{
+        setShowCollapseButtons(false);
+        setAnimation("collapse-close");
+        await sleep(100);
+        dispatch({ type: "@header/ToggleHeaderMenuCollapse", payload: false });
+      }
+
     }
 
     React.useEffect(()=>{
@@ -89,7 +95,7 @@ const Header = () => {
                     </div>
                 </div>
                 }
-                <div className={`${showMenuCollapse ? 'propagation-increase bg-amber-900/80' : 'bg-amber-900/10 propagation-decrease'} ${!showCollapseButtons && 'hidden'} fixed bottom-28 right-5 rounded-full w-16 h-16 jump-animation`}></div>
+                <div className={`${showMenuCollapse ? 'propagation-increase bg-amber-900/80 z-20' : 'bg-amber-900/10 propagation-decrease'} ${!showCollapseButtons && 'hidden'} fixed bottom-28 right-5 rounded-full w-16 h-16`}></div>
 
                 <div className={`${!showCollapseButtons && 'hidden'} flex flex-col text-white items-center gap-5 fixed bottom-28 right-5 z-50 jump-animation`}>
                   <div className="text-4xl">
@@ -97,11 +103,12 @@ const Header = () => {
                         <RiInstagramFill/>
                     </a>
                   </div>
-                  <button onClick={openCollapse}  className={` rounded-full w-16 h-16 drop-shadow-2xl ease-in duration-300 bg-transparent`}>
+                  <button onClick={openCollapse}  className={`rounded-full w-16 h-16 drop-shadow-2xl ease-in duration-300 bg-transparent`}>
                       <StaticImage
                           alt="logo"
                           src="../../images/spiralwhite.png"
                           className="w-full h-full animate-spin-slow bg-transparent"
+                          placeholder="blurred"
                       />
                   </button>
                 </div>

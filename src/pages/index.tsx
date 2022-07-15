@@ -45,8 +45,6 @@ export default function IndexPage() {
             <p onClick={() => scrollTo("#fruits-section")} className="hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300">Ensaladas de Frutas</p>
           </div>
           <p className="mt-auto lg:hidden font-cookie text-2xl self-start px-5 mb-4">Busca el equilibrio</p>
-          v
-          v
         </div>
       </section>
 
@@ -73,7 +71,7 @@ export default function IndexPage() {
         <div className="text-white flex flex-col gap-5 px-4 md:px-10 lg:px-16 lg:border-r-4 container-lg-12">
           <p className="font-cookie text-white text-5xl mb-4 lg:mb-8 text-center">Ensalada de frutas</p>
           {yogurts.map((yogurt, index) => (
-            <div className="flex justify-between">
+            <div className="flex justify-between" key={index}>
               <div className="w-4/6">
                 <p className="font-bold text-xl">{yogurt.name}</p>
                 <p>{yogurt.ingredients}</p>
