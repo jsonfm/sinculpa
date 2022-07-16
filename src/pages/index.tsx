@@ -22,6 +22,7 @@ import { snacks } from "@/api/snacks";
 
 import scrollTo from 'gatsby-plugin-smoothscroll';
 
+// import Parallax from "react-scroll-parallax";
 
 
 export default function IndexPage() {
@@ -85,9 +86,9 @@ export default function IndexPage() {
         </div>
       </section>
 
-      <section id="fruits-section" className="w-full relative min-h-[100vh] grid lg:grid-cols-2 place-content-center place-items-center bg-fruits bg-cover py-12 pb-32">
+      <section id="fruits-section" className="w-full relative min-h-[100vh] grid  bg-fruits lg:bg-cover py-32 pb-32">
         <div className="bg-black/60 absolute top-0 left-0 w-full h-full"></div>
-        <div className="text-white z-10 flex flex-col gap-5 px-4 md:px-10 lg:px-16 lg:border-4 lg:border-white container-lg-12 bg-rose-900/70 py-6">
+        {/* <div className="text-white z-10 flex flex-col gap-5 px-4 md:px-10 lg:px-16 lg:border-4 lg:border-white container-lg-12 bg-rose-900/70 py-6">
           <p className="font-cookie text-white text-5xl mb-4 lg:mb-8 text-center">Ensalada de frutas</p>
           {yogurts.map((yogurt, index) => (
             <div className="flex justify-between" key={index}>
@@ -98,8 +99,30 @@ export default function IndexPage() {
               <p className="font-bold text-lg">$ {yogurt.price.toFixed(2)}</p>
             </div>
           ))}
+        </div> */}
+        {/* <div className="mt-5 z-10 text-white w-full h-full flex items-center justify-center font-cookie text-2xl lg:text-7xl">Dale sabor a tu vida.</div> */}
+        <div className="z-10 w-full grid gap-3 place-content-center">
+          <div className="w-[330px] lg:w-[500px] min-h-96 rounded-md bg-white/80 text-gray-600 mx-auto  px-4 py-7 mb-12">
+            <p className="font-cookie text-6xl">{yogurts[0].name}</p>
+            <p className="text-xl mt-2">{yogurts[0].ingredients}</p>
+            <p className="text-4xl text-end mt-3 font-bold">$ {yogurts[0].price.toFixed(2)}</p>
+          </div>
+
+          {yogurts.slice(1).map((yogurt, index) =>(
+            <div className="flex flex-col md:flex-row gap-4 items-center z-10 mx-auto my-4">
+              <img
+                src={yogurt.image}
+                className="w-64 h-64 rounded-full border-4 object-cover"
+              />
+              <div className="bg-yellow-600/80 lg:h-[60%] w-[20rem] lg:w-[24rem] text-white p-4 rounded-md font-bold">
+                <p className="text-xl font-bold">{yogurt.name}</p>
+                <div className="w-[95%] mb-2 h-[2px] bg-white"></div>
+                <p className="h-[50%] overflow-y-auto">{yogurt.ingredients}</p>
+                <p className="font-bold text-xl text-end">$ {yogurt.price.toFixed(2)}</p>
+              </div>
+            </div>
+          ))}
         </div>
-        <div className="mt-5 z-10 text-white w-full h-full flex items-center justify-center font-cookie text-2xl lg:text-7xl">Dale sabor a tu vida.</div>
       </section>
 
       <section id="arepas-section" className="w-full min-h-[100vh] bg-[#894f28] py-12 pb-32">
@@ -110,7 +133,7 @@ export default function IndexPage() {
             <img
               loading="lazy"
               src={item.image}
-              className="w-full h-48 md:h-64 lg:h-72 2xl:h-96"
+              className="w-full h-48 object-cover md:h-64 lg:h-72 2xl:h-96"
             />
             <div className="text-white bg-green-white pt-3 h-40">
               <p className="text-xl font-bold bg-white text-orange-900 w-2/3 px-5 mb-2">{item.name}</p>
@@ -130,7 +153,7 @@ export default function IndexPage() {
               <img
                 loading="lazy"
                 src={dinner.image}
-                className="w-full h-64 md:h-64 lg:h-72 2xl:h-96"
+                className="w-full h-64 md:h-64 lg:h-72 2xl:h-96 object-cover"
               />
               <div className=" h-48 py-2 px-4 lg:px-8">
                 <p className="text-xl font-bold py-2">{dinner.name}</p>
@@ -142,18 +165,20 @@ export default function IndexPage() {
         </div>
       </section>
 
-      <section id="cocktails-section" className="min-h-[100vh] bg-amber-600 py-32">
-        <p className="text-center text-white font-bold font-cookie text-6xl lg:text-7xl mb-12">Cócteles bajos en calorías</p>
-        <div className="grid gap-3 w-80 md:w-[30rem] mx-auto">
-          {cocktails.map((cocktail, index) =>(
-            <div className="flex justify-between text-white text-xl" key={index}>
-              <div className="flex flex-col w-4/6 md:w-5/6">
-                <p className="font-bold">{cocktail.name}</p>
-                <p className="text-base"> {cocktail.ingredients}</p>
+      <section id="cocktails-section" className="min-h-[100vh] bg-drinks-mobile bg-cover  bg-center lg:bg-drinks py-32">
+        <div className="bg-black/80 border-4 py-12 max-w-[500px] mx-auto">
+          <p className="text-center font-bold font-cookie text-6xl lg:text-7xl mb-12 text-yellow-600">Cócteles bajos en calorías</p>
+          <div className="grid gap-3 w-80 md:w-[30rem] mx-auto px-2 lg:px-4">
+            {cocktails.map((cocktail, index) =>(
+              <div className="flex justify-between text-white text-xl" key={index}>
+                <div className="flex flex-col w-4/6 md:w-5/6">
+                  <p className="font-bold text-yellow-600">{cocktail.name}</p>
+                  <p className="text-base"> {cocktail.ingredients}</p>
+                </div>
+                <p>$ {cocktail.price.toFixed(2)}</p>
               </div>
-              <p>$ {cocktail.price.toFixed(2)}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
     </>
