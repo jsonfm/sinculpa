@@ -28,7 +28,7 @@ export default function IndexPage() {
     <>
       <section className="w-full min-h-[100vh] py-8 lg:pt-32 lg:pb-32 grid lg:grid-cols-2 place-content-center bg-woods bg-cover  text-white ease-out duration-300 z-10">
         <div className="hidden lg:flex items-center justify-center font-cookie text-7xl">Busca el equilibrio</div>
-        <div className="place-self-start flex flex-col items-center mx-auto lg:ml-3 w-[22rem] md:w-[23rem] bg-amber-900/30 border-2 border-white min-h-[95vh] pt-10 lg:pt-5 lg:pb-12 z-10">
+        <div className="place-self-start flex flex-col items-center mx-auto lg:ml-3 w-[22rem] md:w-[23rem] drop-shadow-2xl bg-amber-900/30 border-2 border-white min-h-[95vh] pt-10 lg:pt-5 lg:pb-12 z-10">
           <StaticImage
             alt="logo"
             src="../images/logo.png"
@@ -85,9 +85,9 @@ export default function IndexPage() {
 
       <section id="arepas-section" className="w-full min-h-[100vh] bg-orange-500 py-12 pb-32">
         <p className="text-white text-center font-bold font-cookie text-6xl lg:text-7xl mb-12">Arepas</p>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 place-content-center container-lg mx-auto  px-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 place-content-center container-lg mx-auto  px-4">
         {arepas.map((item, index) =>(
-          <div className="flex flex-col w-full border-4 border-white" key={index}>
+          <div className="flex flex-col w-full border-4 border-white hover:drop-shadow-xl hover:lg:-translate-y-3 ease-out duration-300 hover:cursor-pointer" key={index}>
             <img
               loading="lazy"
               src={item.image}
@@ -107,7 +107,7 @@ export default function IndexPage() {
         <p className="pt-6 pb-12 font-cookie text-6xl text-blue-700 text-center">Meriendas</p>
         <div className="grid md:grid-cols-2 gap-y-5 place-content-center place-items-center container-lg mx-auto">
           {dinners.map((dinner, index) => (
-            <div className="w-[95%] border-2  border-blue-700 text-white" key={index}>
+            <div className="w-[95%] border-2  border-blue-700 text-white  hover:lg:-translate-y-3 ease-out duration-300 hover:cursor-pointer" key={index}>
               <img
                 loading="lazy"
                 src={dinner.image}

@@ -3,9 +3,9 @@ import * as React from "react";
 
 const GridFood = ({ food }: GridFoodProps) => {
     return(
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 place-content-center container-lg mx-auto  px-4">
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 place-content-center container-lg mx-auto px-4">
       {food.map((item, index) => (
-        <div className="flex flex-col w-full border-2 border-white" key={index}>
+        <div className="flex flex-col w-full border-2 border-white hover:cursor-pointer hover:scale-105 ease-in duration-300" key={index}>
           <img
             src={item.image}
             className="w-full h-48 md:h-64 lg:h-72 2xl:h-96 border"

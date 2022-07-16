@@ -14,6 +14,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 // Styles
 import "./styles.css";
+import { FlowersDivider } from "../svgs/FlowersDivider";
 
 
 const Header = () => {
@@ -69,25 +70,26 @@ const Header = () => {
                     <div className={`${animation} relative top-0 flex-col items-center h-full z-30`}>
                         <div className="h-full border-4 text-white flex flex-col items-center">
                             <p className="font-cookie text-6xl mt-6 underline underline-offset-2">Menú</p>
+                            <FlowersDivider className="text-white"/>
                             <div className="mt-5">
                                 <div className="grid grid-cols-2 mt-4 text-white font-cookie text-4xl text-center">
                                     <div className="m-4">
-                                      <p onClick={async () => scrollFromTo('#arepas-section')}>Arepas</p>
+                                      <p onClick={async () => scrollFromTo('#arepas-section')} className="hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300">Arepas</p>
                                     </div>
                                     <div className="m-4">
-                                      <p onClick={async () => scrollFromTo('#plates-section')}>Platos Fuertes</p>
+                                      <p onClick={async () => scrollFromTo('#salads-section')} className="hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300">Ensaladas</p>
                                     </div>
                                     <div className="m-4">
-                                      <p onClick={async () => scrollFromTo('#salads-section')}>Ensaladas</p>
+                                      <p onClick={async () => scrollFromTo('#plates-section')} className="hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300">A toda hora</p>
                                     </div>
                                     <div className="m-4">
-                                      <p onClick={async () => scrollFromTo('#fruits-section')}>Ensaladas de frutas</p>
+                                      <p onClick={async () => scrollFromTo('#fruits-section')} className="hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300">Ensaladas de frutas</p>
                                     </div>
                                     <div className="m-4">
-                                      <p onClick={async () => scrollFromTo('#cocktails-section')}>Cócteles</p>
+                                      <p onClick={async () => scrollFromTo('#cocktails-section')} className="hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300">Cócteles</p>
                                     </div>
                                     <div className="m-4">
-                                      <p onClick={async () => scrollFromTo('#dinners-section')}>Meriendas</p>
+                                      <p onClick={async () => scrollFromTo('#dinners-section')} className="hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300">Meriendas</p>
                                     </div>
                                 </div>
                             </div>
