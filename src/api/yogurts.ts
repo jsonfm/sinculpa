@@ -18,9 +18,9 @@ export const yogurts: Product[] = [
     category: {name: "yogurts"},
   },
   {
-    name: "Ensalada de frutas del bosque",
-    ingredients: "Yogurt griego, granola, fresa, mora y arandanos.",
-    price: 3.50,
+    name: "Ensalada de frutas secos y chocolate",
+    ingredients: "Yogurt griego, maduro, almendras, mani, nuez, chocolate y mantequilla de maní.",
+    price: 3.75,
     category: {name: "yogurts"},
   },
 ]
