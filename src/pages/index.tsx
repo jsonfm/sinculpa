@@ -19,7 +19,7 @@ import { cocktails } from "@/api/cocktails";
 import { dinners } from "@/api/dinners";
 import { yogurts } from "@/api/yogurts";
 import { snacks } from "@/api/snacks";
-
+import { lights } from "@/api/lights";
 import scrollTo from 'gatsby-plugin-smoothscroll';
 
 // import Parallax from "react-scroll-parallax";
@@ -69,9 +69,19 @@ export default function IndexPage() {
           </div>
         ))}
         </div>
+
+        <div className="bg-stone-800 shadow-[0_0_30px_0px_rgba(255,255,255,0.6)] w-[300px] mx-auto mt-12 px-4 py-12 gap-10 rounded-md">
+          <p className="text-center mb-12 font-cookie text-4xl">Opciones Rápidas</p>
+          {lights.map((light, index) => (
+            <div className="flex justify-between my-4 text-lg">
+              <p className="w-[60%] text-yellow-600">{light.name}</p>
+              <p className="font-bold">$ {light.price.toFixed(2)}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
-      <section id="salads-section"  className="min-h-[130vh] py-12 pb-32 bg-[#81af52]">
+      <section id="salads-section"  className="min-h-[130vh] py-12 pb-32 bg-yellow-700">
         <p className="text-center text-white font-cookie text-6xl lg:text-7xl mb-12">Ensaladas</p>
         <GridFood
           food={salads}
@@ -153,7 +163,7 @@ export default function IndexPage() {
               <img
                 loading="lazy"
                 src={dinner.image}
-                className="w-full h-64 md:h-64 lg:h-72 2xl:h-96 object-cover"
+                className="w-full h-64 md:h-64 lg:h-72 2xl:h-96 object-covergi"
               />
               <div className=" h-48 py-2 px-4 lg:px-8">
                 <p className="text-xl font-bold py-2">{dinner.name}</p>
@@ -165,7 +175,7 @@ export default function IndexPage() {
         </div>
       </section>
 
-      <section id="cocktails-section" className="min-h-[100vh] bg-drinks-mobile bg-cover  bg-center lg:bg-drinks py-32">
+      <section id="cocktails-section" className="min-h-[100vh] bg-drinks-mobile bg-cover  bg-center lg:bg-drinks py-12">
         <div className="bg-black/80 border-4 py-12 max-w-[500px] mx-auto">
           <p className="text-center font-bold font-cookie text-6xl lg:text-7xl mb-12 text-yellow-600">Cócteles bajos en calorías</p>
           <div className="grid gap-3 w-80 md:w-[30rem] mx-auto px-2 lg:px-4">
