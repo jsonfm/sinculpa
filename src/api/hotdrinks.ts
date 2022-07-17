@@ -19,4 +19,19 @@ export const hotdrinks: Product[] = [
     "price": 2.00,
     "category": {name: "hotdrink"},
   },
+  {
+    "name": "Cake de frutos secos",
+    "price": 3.50,
+    "category": {name: "hotdrink"},
+  },
+  {
+    "name": "Brownie de Avena",
+    "price": 2.50,
+    "category": {name: "hotdrink"},
+  },
+  {
+    "name": "Galletas sin gluten",
+    "price": 2.00,
+    "category": {name: "hotdrink"},
+  },
 ]

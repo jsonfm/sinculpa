@@ -59,7 +59,7 @@ const arepas: Product[] = [
         "name": "Arepa Zai",
         "ingredients": "Carne mechada, Platano frito, queso mozzarella.",
         "price": 3.50,
-        "image": "https://www.recetasderechupete.com/wp-content/uploads/2019/11/Tipos-de-arepas.jpg",
+        "image": "https://sinculpasite.files.wordpress.com/2022/07/arepazai.jpeg",
         "category": {name: "arepa"},
     },
     {

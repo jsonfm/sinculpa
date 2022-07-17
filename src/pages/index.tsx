@@ -8,18 +8,15 @@ import { GridFood } from "@/components/GridFood";
 import { MenuCard } from "@/components/MenuCard";
 
 // API
-import { brunchs } from "@/api/brunchs";
 import { arepas } from "@/api/arepas";
-import { wines } from "@/api/wines";
 import { salads } from "@/api/salads";
-import { mexicans }from "@/api/mexicans";
-import { plates } from "@/api/plates";
-import { coffees } from "@/api/coffees";
 import { cocktails } from "@/api/cocktails";
 import { dinners } from "@/api/dinners";
 import { yogurts } from "@/api/yogurts";
 import { snacks } from "@/api/snacks";
 import { lights } from "@/api/lights";
+import { drinks } from "@/api/drinks";
+import {hotdrinks } from "@/api/hotdrinks";
 import scrollTo from 'gatsby-plugin-smoothscroll';
 
 // import Parallax from "react-scroll-parallax";
@@ -73,7 +70,7 @@ export default function IndexPage() {
         <div className="bg-stone-800 shadow-[0_0_30px_0px_rgba(255,255,255,0.6)] w-[300px] mx-auto mt-12 px-4 py-12 gap-10 rounded-md">
           <p className="text-center mb-12 font-cookie text-4xl">Opciones Rápidas</p>
           {lights.map((light, index) => (
-            <div className="flex justify-between my-4 text-lg">
+            <div className="flex justify-between my-4 text-lg" key={index}>
               <p className="w-[60%] text-yellow-600">{light.name}</p>
               <p className="font-bold">$ {light.price.toFixed(2)}</p>
             </div>
@@ -189,6 +186,40 @@ export default function IndexPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="w-full min-h-[100vh] py-12 bg-juices-mobile bg-center lg:bg-juices bg-cover">
+          <div className="bg-yellow-600/80 min-h-64 text-white p-5 border-4 max-w-[500px] mx-auto">
+            <p className="text-4xl font-bold font-cookie">Jugos y Batidos</p>
+            <div className="h-1 w-full bg-white mt-2 mb-6"></div>
+            {drinks.map((drink, index) => (
+              <div className="flex flex-col my-3" key={index}>
+                <div className="flex justify-between">
+                  <div className="flex flex-col w-[70%]">
+                    <p className="text-2xl font-bold mb-1">{drink.name}</p>
+                    <ul className="list-disc pl-7 text-xl">
+                      {drink && drink.ingredients.split(",").map((taste, index) => (
+                        <li className="capitalize">{taste}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <p className="font-bold text-2xl">$ {drink.price.toFixed(2)}</p>
+              </div>
+              </div>
+            ))}
+          </div>
+      </section>
+
+      <section className="w-full min-h-[100vh] bg-postre bg-center bg-cover grid place-content-center px-4 py-12">
+        <div className="bg-white/80 px-3 border-4 border-white w-[330px] lg:w-[500px] mx-auto py-6">
+          <p className="text-center font-cookie text-5xl text-orange-800 mt-12 mb-24 w-[300px] mx-auto">Bebidas calientes y postres</p>
+          {hotdrinks.map(drink => (
+            <div className="text-orange-800 font-bold flex justify-between my-3 text-xl">
+              <p>{drink.name}</p>
+              <p className="text-xl">$ {drink.price.toFixed(2)}</p>
+            </div>
+          ))}
         </div>
       </section>
     </>
