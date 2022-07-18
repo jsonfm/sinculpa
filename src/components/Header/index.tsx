@@ -72,25 +72,16 @@ const Header = () => {
                             <p className="font-cookie text-6xl mt-6 underline underline-offset-2">Menú</p>
                             <FlowersDivider className="text-white"/>
                             <div className="mt-5">
-                                <div className="grid grid-cols-2 mt-4 text-white font-cookie text-4xl text-center">
-                                    <div className="m-4">
-                                      <p onClick={async () => scrollFromTo('#arepas-section')} className="hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300">Arepas</p>
-                                    </div>
-                                    <div className="m-4">
-                                      <p onClick={async () => scrollFromTo('#salads-section')} className="hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300">Ensaladas</p>
-                                    </div>
-                                    <div className="m-4">
-                                      <p onClick={async () => scrollFromTo('#plates-section')} className="hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300">A toda hora</p>
-                                    </div>
-                                    <div className="m-4">
-                                      <p onClick={async () => scrollFromTo('#fruits-section')} className="hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300">Ensaladas de frutas</p>
-                                    </div>
-                                    <div className="m-4">
-                                      <p onClick={async () => scrollFromTo('#cocktails-section')} className="hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300">Cócteles</p>
-                                    </div>
-                                    <div className="m-4">
-                                      <p onClick={async () => scrollFromTo('#dinners-section')} className="hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300">Meriendas</p>
-                                    </div>
+                                <div className="grid grid-cols-2 mt-4 gap-y-6 text-white font-cookie text-3xl text-center px-4">
+                                  <p onClick={async () => scrollFromTo('#snacks-section')} className="hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300">A toda hora</p>
+                                  <p onClick={async () => scrollFromTo('#fast-options')} className="hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300">Opciones Rápidas</p>
+                                  <p onClick={async () => scrollFromTo('#arepas-section')} className="hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300">Arepas</p>
+                                  <p onClick={async () => scrollFromTo('#salads-section')} className="hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300">Ensaladas</p>
+                                  <p onClick={async () => scrollFromTo('#fruits-section')} className="hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300">Ensaladas de frutas</p>
+                                  <p onClick={async () => scrollFromTo('#cocktails-section')} className="hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300">Cócteles</p>
+                                  <p onClick={async () => scrollFromTo('#dinners-section')} className="hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300">Meriendas</p>
+                                  <p onClick={async () => scrollFromTo('#juices-section')} className="hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300">Jugos y batidos</p>
+                                  <p onClick={async () => scrollFromTo('#hotdrinks-section')} className="hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300">Bebidas calientes y postres</p>
                                 </div>
                             </div>
                         </div>
