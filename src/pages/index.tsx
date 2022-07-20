@@ -18,7 +18,6 @@ import { lights } from "@/api/lights";
 import { drinks } from "@/api/drinks";
 import {hotdrinks } from "@/api/hotdrinks";
 import scrollTo from 'gatsby-plugin-smoothscroll';
-
 import { ParallaxBanner } from "react-scroll-parallax";
 
 

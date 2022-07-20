@@ -8,7 +8,7 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "gatsby develop",
+    "develop": "gatsby develop -H 0.0.0.0",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
@@ -21,6 +21,7 @@
     "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-google-analytics": "^4.18.0",
     "gatsby-plugin-image": "^2.17.0",
+    "gatsby-plugin-manifest": "^4.19.0",
     "gatsby-plugin-sharp": "^4.17.0",
     "gatsby-plugin-sitemap": "^5.17.0",
     "gatsby-plugin-smoothscroll": "^1.2.0",

@@ -20,6 +20,12 @@ module.exports = {
       __key: "images"
     },
     {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        icon: './src/images/spiralwhite.png',
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         // The property ID; the tracking code won't be generated without it
