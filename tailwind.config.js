@@ -7,8 +7,9 @@ module.exports = {
     extend: {
       fontFamily: {
         cookie: ["Cookie", "Cursive"],
-        'display': ['Oswald'],
-        'body': ["Open Sans"],
+        poiret: ["Poiret One", "Cursive"],
+        'display': ['Ubuntu'],
+        'body': ["Ubuntu"],
       },
       spacing: {
         '128': '32rem',

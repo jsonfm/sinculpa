@@ -3,17 +3,18 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
 
 @layer base {
   html {
     font-family: 'Ubuntu', sans-serif;
-    background: rgb(5, 5, 5);
+    background: rgb(25, 25, 25);
   }
 }
 
 @layer components {
   .menu-name {
-    @apply hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300 font-cookie text-2xl;
+    @apply hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300 font-poiret;
   }
 }
 

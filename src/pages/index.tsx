@@ -17,16 +17,20 @@ import { snacks } from "@/api/snacks";
 import { lights } from "@/api/lights";
 import { drinks } from "@/api/drinks";
 import {hotdrinks } from "@/api/hotdrinks";
+
+// Plugins
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import { ParallaxBanner } from "react-scroll-parallax";
 
+// Styles
+import "@/styles/index.css";
 
 export default function IndexPage() {
   return (
     <>
-      <section className="w-full min-h-[100vh] py-8 lg:pt-32 lg:pb-32 grid lg:grid-cols-2 place-content-center bg-cover  text-white ease-out duration-300 z-10">
-        <div className="hidden lg:flex items-center justify-center font-cookie text-7xl">Encuentra el equilibrio</div>
-        <div className="place-self-start flex flex-col items-center mx-auto lg:ml-3 w-[22rem] md:w-[23rem] drop-shadow-2xl bg-[#4b4b4b] border-2 border-white min-h-[95vh] pt-10 lg:pt-5 lg:pb-12 z-10">
+      <section className="w-full min-h-[100vh] lg:py-12 grid lg:grid-cols-2 place-content-center bg-cover  text-white ease-out duration-300 z-10">
+        <div className="hidden lg:flex items-center font-poiret justify-center text-4xl ease-in duration-1000 delay-500">Encuentra el equilibrio</div>
+        <div className="place-self-start flex flex-col items-center mx-auto lg:ml-3 w-[22rem] md:w-[23rem] border border-white rounded-md min-h-[90vh] lg:min-h-[38rem] pt-12 z-10">
           <StaticImage
             alt="logo"
             src="../images/logo.png"
@@ -35,16 +39,16 @@ export default function IndexPage() {
             objectFit="contain"
           />
           <p className="text-5xl mt-6 mb-8 font-cookie underline underline-offset-2">Menú</p>
-          <div className="grid grid-cols-2 gap-y-3 place-content-center text-center text-xl z-10 px-4">
-            <p onClick={() => scrollTo("#snacks-section")} className="menu-name">A toda hora</p>
-            <p onClick={() => scrollTo("#fast-options")} className="menu-name">Opciones Ligeras</p>
-            <p onClick={() => scrollTo("#arepas-section")} className="menu-name">Arepas</p>
-            <p onClick={() => scrollTo("#salads-section")} className="menu-name">Ensaladas</p>
-            <p onClick={() => scrollTo("#dinners-section")} className="menu-name">Meriendas</p>
-            <p onClick={() => scrollTo("#cocktails-section")} className="menu-name">Cócteles</p>
-            <p onClick={() => scrollTo("#fruits-section")} className="menu-name">Ensaladas de Frutas</p>
-            <p onClick={() => scrollTo("#juices-section")} className="menu-name">Jugos y batidos</p>
-            <p onClick={() => scrollTo("#fruits-section")} className="menu-name">Bebidas calientes y postres</p>
+          <div className="grid grid-cols-2 gap-y-3 place-content-center text-xl text-center px-2">
+            <p onClick={() => scrollTo("#snacks-section")} className="menu-name">- A toda hora</p>
+            <p onClick={() => scrollTo("#fast-options")} className="menu-name">- Opciones Ligeras</p>
+            <p onClick={() => scrollTo("#arepas-section")} className="menu-name">- Arepas</p>
+            <p onClick={() => scrollTo("#salads-section")} className="menu-name">- Ensaladas</p>
+            <p onClick={() => scrollTo("#dinners-section")} className="menu-name">- Meriendas</p>
+            <p onClick={() => scrollTo("#cocktails-section")} className="menu-name">- Cócteles</p>
+            <p onClick={() => scrollTo("#fruits-section")} className="menu-name">- Ensaladas de Frutas</p>
+            <p onClick={() => scrollTo("#juices-section")} className="menu-name">- Jugos y batidos</p>
+            <p onClick={() => scrollTo("#fruits-section")} className="menu-name">- Bebidas calientes y postres</p>
           </div>
           <p className="mt-auto lg:hidden font-cookie text-2xl self-end px-5 mb-4">Encuentra el equilibrio</p>
         </div>
@@ -97,7 +101,7 @@ export default function IndexPage() {
               class="h-[500px] w-[300px] rounded-md border-4"
               src="https://sinculpasite.files.wordpress.com/2022/07/sinculpa.jpeg"
             />
-            <p className="text-white">Since 2019</p>
+            <p className="text-white font-poiret text-2xl">Since 2019</p>
             </div>
             <div className="font-cookie text-center text-4xl lg:text-5xl text-white min-w-[300px] max-w-[500px]">
               <p className="mx-auto">Nadie llega a la tierra prometida, sin antes pasar por el desierto.</p>
@@ -199,8 +203,8 @@ export default function IndexPage() {
         </div>
       </section>
 
-      <section id="juices-section" className="w-full min-h-[100vh] py-6 bg-juices-mobile bg-center lg:bg-juices bg-cover">
-          <div className="glassmorphism-pink min-h-64 text-white p-5 border-4 max-w-[500px] mx-auto">
+      <section id="juices-section" className="w-full min-h-[100vh] grid place-content-center  py-6 bg-juices-mobile bg-center lg:bg-juices bg-cover">
+          <div className="glassmorphism-yellow min-h-64 text-white p-5 border-4 max-w-[500px] mx-auto">
             <p className="text-6xl font-bold font-cookie text-center mb-12">Jugos y Batidos</p>
             {/* <div className="h-1 w-full bg-white mt-2 mb-6"></div> */}
             {drinks.map((drink, index) => (
