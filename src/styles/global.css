@@ -7,8 +7,16 @@
 @layer base {
   html {
     font-family: 'Ubuntu', sans-serif;
+    background: rgb(5, 5, 5);
   }
 }
+
+@layer components {
+  .menu-name {
+    @apply hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300 font-cookie text-2xl;
+  }
+}
+
 
 
 .gray-gradient {
@@ -64,4 +72,42 @@
     0%    {opacity: 1;   transform: scale(1);}
     100%  {opacity: 0;   transform: scale(0.5);}
 }
+
+.glassmorphism-black {
+  background: rgba( 0, 0, 0, 0.65 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 11.5px );
+  -webkit-backdrop-filter: blur( 11.5px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.glassmorphism-yellow {
+  background: rgba( 248, 197, 28, 0.15 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 11.5px );
+  -webkit-backdrop-filter: blur( 11.5px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.glassmorphism-pink {
+  background: rgba( 185, 15, 70, 0.65 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 11.5px );
+  -webkit-backdrop-filter: blur( 11.5px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.glassmorphism-brown {
+  background: rgba( 131, 65, 9, 0.3 );
+  /* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );  */
+  backdrop-filter: blur( 1px );
+  -webkit-backdrop-filter: blur( 1px );
+  /* border-radius: 10px; */
+  /* border: 1px solid rgba( 255, 255, 255, 0.18 ); */
+}
+
+
 
