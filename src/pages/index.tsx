@@ -59,7 +59,7 @@ export default function IndexPage() {
           <div className="relative flex flex-col item-center w-full">
             <img
               loading="lazy"
-              src={snack.image}
+              src={`${snack.image}?w=600`}
               className="h-80 w-96  rounded-full border-4 border-white mx-auto mb-4 object-cover"
             />
             <p className="-mt-10 w-24 text-yellow-700 text-center mb-4 mx-auto p-4 rounded-md bg-white font-bold text-xl">$ {snack.price.toFixed(2)}</p>
@@ -127,7 +127,7 @@ export default function IndexPage() {
             <div className="flex flex-col md:flex-row gap-4 items-center z-10 mx-auto my-4">
               <img
                 loading="lazy"
-                src={yogurt.image}
+                src={`${yogurt.image}?w=600`}
                 className="w-64 h-64 rounded-full border-4 object-cover"
               />
               <div className="bg-yellow-600/80 lg:h-[60%] w-[20rem] lg:w-[24rem] text-white p-4 rounded-md font-bold">
@@ -149,7 +149,7 @@ export default function IndexPage() {
           <div className="flex flex-col w-full border-4 border-white hover:drop-shadow-xl hover:lg:-translate-y-3 ease-out duration-300 hover:cursor-pointer" key={index}>
             <img
               loading="lazy"
-              src={item.image}
+              src={`${item.image}?w=600`}
               className="w-full h-48 object-cover md:h-64 lg:h-72 2xl:h-96"
             />
             <div className="text-white bg-green-white pt-3 h-40">
@@ -169,7 +169,7 @@ export default function IndexPage() {
             <div className="w-[95%] border-2 text-white  hover:lg:-translate-y-3 ease-out duration-300 hover:cursor-pointer" key={index}>
               <img
                 loading="lazy"
-                src={dinner.image}
+                src={`${dinner.image}?w=600`}
                 className="w-full h-64 md:h-64 lg:h-72 2xl:h-96 object-covergi"
               />
               <div className=" h-48 py-2 px-4 lg:px-8">
