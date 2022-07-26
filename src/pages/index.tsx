@@ -67,7 +67,7 @@ export default function IndexPage() {
       </Parallax>
  */}
 
-      <section id="snacks-section" className="w-full min-h-screen bg-[#494949] text-white py-16">
+      <section id="snacks-section" className="w-full min-h-screen bg-[#494949] text-white py-16 xl:py-32">
         <p className="font-bold text-center font-cookie text-yellow-600 text-6xl mb-12 md:mb-24 xl:mb-32 mx-auto rounded-md w-64 relative">A toda hora</p>
         <div className="grid md:grid-cols-2 xl:grid-cols-3 lg:px-32 gap-6 md:gap-32 xl:gap-16 px-5 place-content-center">
         {snacks.map((snack) =>(
@@ -87,9 +87,9 @@ export default function IndexPage() {
         </div>
       </section>
 
-      <section id="fast-options" className="min-h-[50vh] grid place-content-center py-12 bg-black/60">
+      <section id="fast-options" className="min-h-[70vh] grid place-content-center py-12 bg-black/20">
         <div  className="fast-choice-menu">
-              <p className="text-center mb-12 font-cookie text-4xl">Opciones Rápidas</p>
+              <p className="text-center mb-20 font-cookie text-4xl">Opciones Ligeras</p>
               {lights.map((light, index) => (
                 <div className="flex justify-between my-4 text-lg" key={index}>
                   <p className="w-[60%] text-yellow-600">{light.name}</p>
@@ -98,7 +98,7 @@ export default function IndexPage() {
               ))}
         </div>
       </section>
-      <section id="salads-section"  className="min-h-[130vh] py-12 pb-32 bg-yellow-700">
+      <section id="salads-section" className="min-h-[100vh] py-12 md:py-24 xl:py-32 bg-yellow-700">
         <p className="text-center text-white font-cookie text-6xl lg:text-7xl mb-12">Ensaladas</p>
         <GridFood
           food={salads}
@@ -178,15 +178,15 @@ export default function IndexPage() {
         </div>
       </section>
 
-      <section id="dinners-section" className="w-full min-h-[100vh] py-12 pb-32 md:px-16 xl:px-32 bg-[#2c2b2b] text-white">
-        <p className="pt-6 pb-12 font-cookie text-6xl text-center">Meriendas</p>
+      <section id="dinners-section" className="w-full min-h-[100vh] py-12 xl:py-32 md:px-16 xl:px-32 bg-[#2c2b2b] text-white">
+        <p className="mb-12 font-cookie text-6xl text-center">Meriendas</p>
         <div className="grid md:grid-cols-2 gap-y-5 place-content-center place-items-center container-lg mx-auto">
           {dinners.map((dinner, index) => (
             <div className="w-[95%] border-2 text-white  hover:lg:-translate-y-3 ease-out duration-300 hover:cursor-pointer" key={index}>
               <img
                 loading="lazy"
                 src={`${dinner.image}?w=600`}
-                className="w-full h-64 md:h-64 lg:h-72 2xl:h-96 object-covergi"
+                className="w-full h-48 md:h-64 xl:h-72 object-coverr"
               />
               <div className=" h-48 py-2 px-4 lg:px-8">
                 <p className="text-xl font-bold py-2">{dinner.name}</p>
@@ -238,7 +238,7 @@ export default function IndexPage() {
       </section>
 
       <section id="hotdrinks-section" className="w-full min-h-[100vh] bg-postre bg-center bg-cover grid place-content-center px-4 py-12">
-        <div className="bg-white/80 px-3 border-4 border-white w-[330px] lg:w-[500px] mx-auto py-6">
+        <div className="glassmorphism-white px-4 w-[330px] lg:w-[500px] mx-auto py-6">
           <p className="text-center font-cookie text-5xl text-orange-800 mt-12 mb-24 w-[300px] mx-auto">Bebidas calientes y postres</p>
           {hotdrinks.map(drink => (
             <div className="text-orange-800 font-bold flex justify-between my-3 text-xl">

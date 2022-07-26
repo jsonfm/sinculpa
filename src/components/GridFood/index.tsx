@@ -8,7 +8,7 @@ const GridFood = ({ food }: GridFoodProps) => {
         <div className="flex flex-col w-full border-4 border-[#fff] hover:cursor-pointer hover:scale-105 ease-in duration-300" key={index}>
           <img
             src={item.image}
-            className="w-full h-48 md:h-64 lg:h-72 2xl:h-96"
+            className="w-full h-48 md:h-64 xl:h-72 object-cover"
           />
           <div className="text-white bg-white pt-3 h-40">
             <p className="text-xl font-bold bg-[#6f6f6f] text-white w-2/3 px-5 mb-2">{item.name}</p>
