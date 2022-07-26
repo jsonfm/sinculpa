@@ -1,0 +1,13 @@
+
+.light-on {
+  animation: light-on 1s ease-in-out;
+}
+
+@keyframes light-on {
+  0%{
+    color: black;
+  }
+  100%{
+    color: white;
+  }
+}

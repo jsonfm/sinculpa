@@ -16,6 +16,13 @@
   .menu-name {
     @apply hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300 font-poiret;
   }
+  .menu-card {
+    @apply place-self-start flex flex-col items-center mx-auto lg:ml-3 w-[22rem] md:w-[23rem] border border-white rounded-md min-h-[90vh] lg:min-h-[38rem] pt-12 z-10;
+  }
+
+  .fast-choice-menu {
+    @apply text-white bg-stone-800 shadow-[0_0_30px_0px_rgba(255,255,255,0.6)] w-[330px] mx-auto px-4 py-12 gap-10 rounded-md border border-white relative;
+  }
 }
 
 

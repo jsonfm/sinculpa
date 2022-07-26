@@ -21,16 +21,19 @@ import {hotdrinks } from "@/api/hotdrinks";
 // Plugins
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import { ParallaxBanner } from "react-scroll-parallax";
+import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 
 // Styles
 import "@/styles/index.css";
+import { useRef } from "react";
 
 export default function IndexPage() {
+  const ref = useRef();
   return (
     <>
       <section className="w-full min-h-[100vh] lg:py-12 grid lg:grid-cols-2 place-content-center bg-cover  text-white ease-out duration-300 z-10">
-        <div className="hidden lg:flex items-center font-poiret justify-center text-4xl ease-in duration-1000 delay-500">Encuentra el equilibrio</div>
-        <div className="place-self-start flex flex-col items-center mx-auto lg:ml-3 w-[22rem] md:w-[23rem] border border-white rounded-md min-h-[90vh] lg:min-h-[38rem] pt-12 z-10">
+        <div className="hidden lg:flex items-center font-poiret justify-center text-4xl light-on">Encuentra el equilibrio</div>
+        <div className="menu-card">
           <StaticImage
             alt="logo"
             src="../images/logo.png"
@@ -40,31 +43,39 @@ export default function IndexPage() {
           />
           <p className="text-5xl mt-6 mb-8 font-cookie underline underline-offset-2">Menú</p>
           <div className="grid grid-cols-2 gap-y-3 place-content-center text-xl text-center px-2">
-            <p onClick={() => scrollTo("#snacks-section")} className="menu-name">- A toda hora</p>
-            <p onClick={() => scrollTo("#fast-options")} className="menu-name">- Opciones Ligeras</p>
-            <p onClick={() => scrollTo("#arepas-section")} className="menu-name">- Arepas</p>
-            <p onClick={() => scrollTo("#salads-section")} className="menu-name">- Ensaladas</p>
-            <p onClick={() => scrollTo("#dinners-section")} className="menu-name">- Meriendas</p>
-            <p onClick={() => scrollTo("#cocktails-section")} className="menu-name">- Cócteles</p>
-            <p onClick={() => scrollTo("#fruits-section")} className="menu-name">- Ensaladas de Frutas</p>
-            <p onClick={() => scrollTo("#juices-section")} className="menu-name">- Jugos y batidos</p>
-            <p onClick={() => scrollTo("#fruits-section")} className="menu-name">- Bebidas calientes y postres</p>
+            <p onClick={() => scrollTo("#snacks-section")} className="menu-name light-on delay-75">- A toda hora</p>
+            <p onClick={() => scrollTo("#fast-options")} className="menu-name light-on delay-100">- Opciones Ligeras</p>
+            <p onClick={() => scrollTo("#arepas-section")} className="menu-name light-on delay-150">- Arepas</p>
+            <p onClick={() => scrollTo("#salads-section")} className="menu-name light-on delay-200">- Ensaladas</p>
+            <p onClick={() => scrollTo("#dinners-section")} className="menu-name light-on delay-300">- MenMeriendas</p>
+            <p onClick={() => scrollTo("#cocktails-section")} className="menu-name light-on">- Cócteles</p>
+            <p onClick={() => scrollTo("#fruits-section")} className="menu-name light-on">- Ensaladas de Frutas</p>
+            <p onClick={() => scrollTo("#juices-section")} className="menu-name light-on">- Jugos y batidos</p>
+            <p onClick={() => scrollTo("#fruits-section")} className="menu-name light-on">- Bebidas calientes y postres</p>
           </div>
           <p className="mt-auto lg:hidden font-cookie text-2xl self-end px-5 mb-4">Encuentra el equilibrio</p>
         </div>
       </section>
 
-      <section id="snacks-section" className="w-full min-h-[120vh] bg-[#494949] grid place-content-center text-white py-12 lg:py-20">
-        {/* <div className="uppercase text-xl text-yellow-500 w-[60%]">Nadie llega a la tierra prometida sin antes pasar por el desierto</div> */}
-        <p className="font-bold text-center font-cookie text-yellow-600 text-6xl mb-12 mx-auto rounded-md w-64">A toda hora</p>
+      {/* <Parallax pages={3} ref={ref}>
+        <ParallaxLayer offset={0} speed={2.5} className="bg-white">
+          <p>Layers can contain anything</p>
+        </ParallaxLayer>
+        <ParallaxLayer offset={2} speed={1} className="bg-yellow-600 min-h-screen">
+          <button onClick={() => ref.current.scrollTo(0)}>Scroll to top</button>
+        </ParallaxLayer>
+      </Parallax>
+ */}
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 lg:px-32 gap-4 px-5 place-content-center">
+      <section id="snacks-section" className="w-full min-h-screen bg-[#494949] text-white py-16">
+        <p className="font-bold text-center font-cookie text-yellow-600 text-6xl mb-12 md:mb-24 xl:mb-32 mx-auto rounded-md w-64 relative">A toda hora</p>
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 lg:px-32 gap-6 md:gap-32 xl:gap-16 px-5 place-content-center">
         {snacks.map((snack) =>(
           <div className="relative flex flex-col item-center w-full">
             <img
               loading="lazy"
               src={`${snack.image}?w=600`}
-              className="h-80 w-96  rounded-full border-4 border-white mx-auto mb-4 object-cover"
+              className="h-80 w-80 lg:h-72 xl:h-80 rounded-full border-4 border-white mx-auto mb-4 object-cover"
             />
             <p className="-mt-10 w-24 text-yellow-700 text-center mb-4 mx-auto p-4 rounded-md bg-white font-bold text-xl">$ {snack.price.toFixed(2)}</p>
             <div className="bg-white h-40 w-72 px-5 py-3 mx-auto rounded-md text-black">
@@ -74,18 +85,19 @@ export default function IndexPage() {
           </div>
         ))}
         </div>
-
-        <div id="fast-options" className="bg-stone-800 shadow-[0_0_30px_0px_rgba(255,255,255,0.6)] w-[330px] mx-auto mt-12 px-4 py-12 gap-10 rounded-md border border-white">
-          <p className="text-center mb-12 font-cookie text-4xl">Opciones Rápidas</p>
-          {lights.map((light, index) => (
-            <div className="flex justify-between my-4 text-lg" key={index}>
-              <p className="w-[60%] text-yellow-600">{light.name}</p>
-              <p className="font-bold">$ {light.price.toFixed(2)}</p>
-            </div>
-          ))}
-        </div>
       </section>
 
+      <section id="fast-options" className="min-h-[50vh] grid place-content-center py-12 bg-black/60">
+        <div  className="fast-choice-menu">
+              <p className="text-center mb-12 font-cookie text-4xl">Opciones Rápidas</p>
+              {lights.map((light, index) => (
+                <div className="flex justify-between my-4 text-lg" key={index}>
+                  <p className="w-[60%] text-yellow-600">{light.name}</p>
+                  <p className="font-bold">$ {light.price.toFixed(2)}</p>
+                </div>
+              ))}
+        </div>
+      </section>
       <section id="salads-section"  className="min-h-[130vh] py-12 pb-32 bg-yellow-700">
         <p className="text-center text-white font-cookie text-6xl lg:text-7xl mb-12">Ensaladas</p>
         <GridFood
@@ -93,7 +105,7 @@ export default function IndexPage() {
         />
       </section>
 
-      <section className="bg-black/90 w-full min-h-[100vh] grid place-content-center py-16">
+      <section className="bg-black/90 w-full min-h-[100vh] grid place-content-center py-16 scroll-smooth">
           <div className="flex flex-col lg:flex-row mx-auto items-center max-w-[800px] my-auto py-12  gap-12">
             <div className="flex flex-col items-center gap-4">
               <StaticImage
@@ -110,7 +122,7 @@ export default function IndexPage() {
           </div>
       </section>
 
-      <section id="fruits-section" className="w-full relative grid min-h-[100vh] lg:bg-cover">
+      <section id="fruits-section" className="w-full relative grid min-h-[100vh] lg:bg-cover scroll-smooth">
         <ParallaxBanner
           layers={[{
             "image": "https://sinculpasite.files.wordpress.com/2022/07/threefruits.jpeg",
