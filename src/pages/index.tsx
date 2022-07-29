@@ -47,7 +47,7 @@ export default function IndexPage() {
             <p onClick={() => scrollTo("#fast-options")} className="menu-name light-on delay-100">- Opciones Ligeras</p>
             <p onClick={() => scrollTo("#arepas-section")} className="menu-name light-on delay-150">- Arepas</p>
             <p onClick={() => scrollTo("#salads-section")} className="menu-name light-on delay-200">- Ensaladas</p>
-            <p onClick={() => scrollTo("#dinners-section")} className="menu-name light-on delay-300">- MenMeriendas</p>
+            <p onClick={() => scrollTo("#dinners-section")} className="menu-name light-on delay-300">- Meriendas</p>
             <p onClick={() => scrollTo("#cocktails-section")} className="menu-name light-on">- Cócteles</p>
             <p onClick={() => scrollTo("#fruits-section")} className="menu-name light-on">- Ensaladas de Frutas</p>
             <p onClick={() => scrollTo("#juices-section")} className="menu-name light-on">- Jugos y batidos</p>
@@ -56,16 +56,6 @@ export default function IndexPage() {
           <p className="mt-auto lg:hidden font-cookie text-2xl self-end px-5 mb-4">Encuentra el equilibrio</p>
         </div>
       </section>
-
-      {/* <Parallax pages={3} ref={ref}>
-        <ParallaxLayer offset={0} speed={2.5} className="bg-white">
-          <p>Layers can contain anything</p>
-        </ParallaxLayer>
-        <ParallaxLayer offset={2} speed={1} className="bg-yellow-600 min-h-screen">
-          <button onClick={() => ref.current.scrollTo(0)}>Scroll to top</button>
-        </ParallaxLayer>
-      </Parallax>
- */}
 
       <section id="snacks-section" className="w-full min-h-screen bg-[#494949] text-white py-16 xl:py-32">
         <p className="font-bold text-center font-cookie text-yellow-600 text-6xl mb-12 md:mb-24 xl:mb-32 mx-auto rounded-md w-64 relative">A toda hora</p>

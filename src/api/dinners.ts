@@ -15,14 +15,14 @@ export const dinners: Product[] = [
     },
     {
       "name": "Bajar de peso",
-      "ingredients": "Pollo, res, o cerdo; acompañado de menestra y ensalada sin culpa con vinegrate, te o agua.",
+      "ingredients": "Pollo, res, o cerdo; acompañado de menestra y ensalada sin culpa con vinagreta, te o agua.",
       "price": 3.00,
       "image": "https://sinculpasite.files.wordpress.com/2022/07/bajardepeso.jpeg",
       "category": {name: "dinner"},
     },
     {
       "name": "Mantenerse",
-      "ingredients": "Pollo, res, o cerdo; acompañado de menestra y ensalada sin culpa con vinegrate, te o agua.",
+      "ingredients": "Pollo, res o cerdo; acompañado de arroz, menestra, ensalada sin culpa y jugo natural.",
       "price": 3.50,
       "image": "https://sinculpasite.files.wordpress.com/2022/07/mantenerse.jpeg",
       "category": {name: "dinner"},
