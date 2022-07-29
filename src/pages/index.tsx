@@ -25,14 +25,14 @@ import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 
 // Styles
 import "@/styles/index.css";
-import { useRef } from "react";
+// import { useRef } from "react";
 
 export default function IndexPage() {
-  const ref = useRef();
+
   return (
     <>
-      <section className="w-full min-h-[100vh] lg:py-12 grid lg:grid-cols-2 place-content-center bg-cover  text-white ease-out duration-300 z-10">
-        <div className="hidden lg:flex items-center font-poiret justify-center text-4xl light-on">Encuentra el equilibrio</div>
+      <section className={`w-full min-h-[100vh] lg:py-12 grid lg:grid-cols-2 place-content-center bg-woods bg-cover  text-white ease-out duration-300 z-10`}>
+        <div className="hidden lg:flex items-center font-poiret justify-center text-4xl light-on bg-black/20">Encuentra el equilibrio</div>
         <div className="menu-card">
           <StaticImage
             alt="logo"
@@ -51,7 +51,7 @@ export default function IndexPage() {
             <p onClick={() => scrollTo("#cocktails-section")} className="menu-name light-on">- Cócteles</p>
             <p onClick={() => scrollTo("#fruits-section")} className="menu-name light-on">- Ensaladas de Frutas</p>
             <p onClick={() => scrollTo("#juices-section")} className="menu-name light-on">- Jugos y batidos</p>
-            <p onClick={() => scrollTo("#fruits-section")} className="menu-name light-on">- Bebidas calientes y postres</p>
+            <p onClick={() => scrollTo("#hotdrinks-section")} className="menu-name light-on">- Bebidas calientes y postres</p>
           </div>
           <p className="mt-auto lg:hidden font-cookie text-2xl self-end px-5 mb-4">Encuentra el equilibrio</p>
         </div>
@@ -87,16 +87,25 @@ export default function IndexPage() {
         </div>
       </section>
 
-      <section id="fast-options" className="min-h-[70vh] grid place-content-center py-12 bg-black/20">
-        <div  className="fast-choice-menu">
-              <p className="text-center mb-20 font-cookie text-4xl">Opciones Ligeras</p>
-              {lights.map((light, index) => (
-                <div className="flex justify-between my-4 text-lg" key={index}>
-                  <p className="w-[60%] text-yellow-600">{light.name}</p>
-                  <p className="font-bold">$ {light.price.toFixed(2)}</p>
-                </div>
-              ))}
-        </div>
+      <section id="fast-options" className="relative min-h-[70vh] bg-black/20">
+          <ParallaxBanner
+                layers={[{
+                  "image": "https://images.pexels.com/photos/5562924/pexels-photo-5562924.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                  "speed": -20
+                }]}
+                className="absolute top-0 w-full min-h-[100vh]"
+          />
+            <div className="absolute top-0 w-full h-full bg-black/80 grid place-content-center ">
+              <div  className="fast-choice-menu">
+                  <p className="text-center mb-20 font-cookie text-4xl">Opciones Ligeras</p>
+                  {lights.map((light, index) => (
+                    <div className="flex justify-between my-4 text-lg" key={index}>
+                      <p className="w-[60%] text-yellow-600">{light.name}</p>
+                      <p className="font-bold">$ {light.price.toFixed(2)}</p>
+                    </div>
+                  ))}
+              </div>
+            </div>
       </section>
       <section id="salads-section" className="min-h-[100vh] py-12 md:py-24 xl:py-32 bg-yellow-700">
         <p className="text-center text-white font-cookie text-6xl lg:text-7xl mb-12">Ensaladas</p>
@@ -105,28 +114,30 @@ export default function IndexPage() {
         />
       </section>
 
-      <section className="bg-black/90 w-full min-h-[100vh] grid place-content-center py-16 scroll-smooth">
-          <div className="flex flex-col lg:flex-row mx-auto items-center max-w-[800px] my-auto py-12  gap-12">
+      <section className={`w-full min-h-[100vh]  bg-desert bg-cover  scroll-smooth bg-black/80  text-white`}>
+        <div className="bg-black/90 w-full h-full grid place-content-center py-16">
+        <div className="flex flex-col lg:flex-row mx-auto items-center max-w-[800px] my-auto py-12  gap-12">
             <div className="flex flex-col items-center gap-4">
               <StaticImage
               alt="izai"
-              class="h-[500px] w-[300px] rounded-md border-4"
+              class="h-[500px] w-[300px] rounded-md border-4 -scale-x-100 hover:scale-x-100"
               src="https://sinculpasite.files.wordpress.com/2022/07/sinculpa.jpeg"
             />
-            <p className="text-white font-poiret text-2xl">Since 2019</p>
+            <p className="font-poiret text-2xl">Since 2019</p>
             </div>
-            <div className="font-cookie text-center text-4xl lg:text-5xl text-white min-w-[300px] max-w-[500px]">
+            <div className="font-cookie text-center text-4xl lg:text-5xl min-w-[300px] max-w-[500px]">
               <p className="mx-auto">Nadie llega a la tierra prometida, sin antes pasar por el desierto.</p>
               <p className="mt-4 text-3xl">{`~Izai pino.`}</p>
             </div>
           </div>
+        </div>
       </section>
 
       <section id="fruits-section" className="w-full relative grid min-h-[100vh] lg:bg-cover scroll-smooth">
         <ParallaxBanner
           layers={[{
             "image": "https://sinculpasite.files.wordpress.com/2022/07/threefruits.jpeg",
-            "speed": -60
+            "speed": -40
           }]}
           className="py-12"
         >
@@ -186,7 +197,7 @@ export default function IndexPage() {
               <img
                 loading="lazy"
                 src={`${dinner.image}?w=600`}
-                className="w-full h-48 md:h-64 xl:h-72 object-coverr"
+                className="w-full h-48 md:h-64 xl:h-72 object-cover"
               />
               <div className=" h-48 py-2 px-4 lg:px-8">
                 <p className="text-xl font-bold py-2">{dinner.name}</p>
@@ -199,7 +210,7 @@ export default function IndexPage() {
       </section>
 
       <section id="cocktails-section" className="min-h-[100vh] grid place-content-center bg-drinks-mobile bg-cover  bg-center lg:bg-drinks lg:py-12">
-        <div className="glassmorphism-black border-4 py-12 min-w-[330px] max-w-[500px] mx-auto">
+        <div className="glassmorphism-black py-12 min-w-[330px] max-w-[500px] mx-auto">
           <p className="text-center font-bold font-cookie text-6xl lg:text-7xl mb-12 text-yellow-600">Cócteles bajos en calorías</p>
           <div className="grid gap-3 w-80 md:w-[30rem] mx-auto px-2 lg:px-4">
             {cocktails.map((cocktail, index) =>(
@@ -216,7 +227,7 @@ export default function IndexPage() {
       </section>
 
       <section id="juices-section" className="w-full min-h-[100vh] grid place-content-center  py-6 bg-juices-mobile bg-center lg:bg-juices bg-cover">
-          <div className="glassmorphism-yellow min-h-64 text-white p-5 border-4 max-w-[500px] mx-auto">
+          <div className="glassmorphism-yellow min-h-64 text-white p-5 border-4 min-w-[330px] md:min-w-[400px] max-w-[500px] mx-auto">
             <p className="text-6xl font-bold font-cookie text-center mb-12">Jugos y Batidos</p>
             {/* <div className="h-1 w-full bg-white mt-2 mb-6"></div> */}
             {drinks.map((drink, index) => (
@@ -238,10 +249,10 @@ export default function IndexPage() {
       </section>
 
       <section id="hotdrinks-section" className="w-full min-h-[100vh] bg-postre bg-center bg-cover grid place-content-center px-4 py-12">
-        <div className="glassmorphism-white px-4 w-[330px] lg:w-[500px] mx-auto py-6">
-          <p className="text-center font-cookie text-5xl text-orange-800 mt-12 mb-24 w-[300px] mx-auto">Bebidas calientes y postres</p>
+        <div className="glassmorphism-white px-4 w-[330px] lg:w-[500px] mx-auto py-12 text-pink-800">
+          <p className="text-center font-cookie text-5xl mt-10 mb-20 w-[300px] mx-auto">Bebidas calientes y postres</p>
           {hotdrinks.map(drink => (
-            <div className="text-orange-800 font-bold flex justify-between my-3 text-xl">
+            <div className="font-bold flex justify-between my-3 text-xl">
               <p>{drink.name}</p>
               <p className="text-xl">$ {drink.price.toFixed(2)}</p>
             </div>

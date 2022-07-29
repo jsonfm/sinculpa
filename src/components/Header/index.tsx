@@ -72,23 +72,23 @@ const Header = () => {
                             <p className="font-cookie text-6xl mt-6 underline underline-offset-2">Menú</p>
                             <FlowersDivider className="text-white"/>
                             <div className="mt-5">
-                                <div className="grid grid-cols-2 mt-4 gap-y-6 text-white font-cookie text-2xl text-center px-4">
-                                  <p onClick={async () => scrollFromTo('#snacks-section')} className="menu-name">A toda hora</p>
-                                  <p onClick={async () => scrollFromTo('#fast-options')} className="menu-name">Opciones Rápidas</p>
-                                  <p onClick={async () => scrollFromTo('#arepas-section')} className="menu-name">Arepas</p>
-                                  <p onClick={async () => scrollFromTo('#salads-section')} className="menu-name">Ensaladas</p>
-                                  <p onClick={async () => scrollFromTo('#fruits-section')} className="menu-name">Ensaladas de frutas</p>
-                                  <p onClick={async () => scrollFromTo('#cocktails-section')} className="menu-name">Cócteles</p>
-                                  <p onClick={async () => scrollFromTo('#dinners-section')} className="menu-name">Meriendas</p>
-                                  <p onClick={async () => scrollFromTo('#juices-section')} className="menu-name">Jugos y batidos</p>
-                                  <p onClick={async () => scrollFromTo('#hotdrinks-section')} className="menu-name">Bebidas calientes y postres</p>
+                                <div className="grid grid-cols-2 mt-4 gap-y-6 text-white font-cookie text-xl text-center px-4">
+                                  <p onClick={async () => scrollFromTo('#snacks-section')} className="menu-name">-A toda hora</p>
+                                  <p onClick={async () => scrollFromTo('#fast-options')} className="menu-name">-Opciones Rápidas</p>
+                                  <p onClick={async () => scrollFromTo('#arepas-section')} className="menu-name">-Arepas</p>
+                                  <p onClick={async () => scrollFromTo('#salads-section')} className="menu-name">-Ensaladas</p>
+                                  <p onClick={async () => scrollFromTo('#fruits-section')} className="menu-name">-Ensaladas de frutas</p>
+                                  <p onClick={async () => scrollFromTo('#cocktails-section')} className="menu-name">-Cócteles</p>
+                                  <p onClick={async () => scrollFromTo('#dinners-section')} className="menu-name">-Meriendas</p>
+                                  <p onClick={async () => scrollFromTo('#juices-section')} className="menu-name">-Jugos y batidos</p>
+                                  <p onClick={async () => scrollFromTo('#hotdrinks-section')} className="menu-name">-Bebidas calientes y postres</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 }
-                <div className={`${showMenuCollapse ? 'propagation-increase bg-green-900/90 z-20' : 'bg-black/10 propagation-decrease'} ${!showCollapseButtons && 'hidden'} fixed bottom-28 right-5 rounded-full w-16 h-16`}></div>
+                <div className={`${showMenuCollapse ? 'propagation-increase bg-lime-900/90 z-20' : 'bg-black/10 propagation-decrease'} ${!showCollapseButtons && 'hidden'} fixed bottom-28 right-5 rounded-full w-16 h-16`}></div>
 
                 <div className={`${!showCollapseButtons && 'hidden'} flex flex-col text-white items-center gap-5 fixed bottom-28 right-5 z-50 jump-animation`}>
                   <div className="text-4xl">
