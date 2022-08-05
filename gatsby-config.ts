@@ -2,7 +2,8 @@ module.exports = {
   pathPrefix: "/sinculpa",
   siteMetadata: {
     title: `sinculpa`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://sinculpaloja.com`,
+    description: `Sin Culpa es un restaurante ubicado en la ciudad de loja, cuyo leitmotiv es ofrecer alimentación de calidad sin perjudicar la conciencia calórica de nuestros clientes. Brindamos diversidad de platos, ensaladas, comida tradicional, jugos, vinos. A más de un ambiente ameno para compartir, dialogar, y disfrutar de buena comida, con amigos y sin culpas.`,
   },
   plugins: [
     "gatsby-plugin-postcss",
