@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: "/",
+  pathPrefix: "/sinculpa",
   siteMetadata: {
     title: `sinculpa`,
     siteUrl: `https://sinculpaloja.com`,
@@ -52,7 +52,7 @@ module.exports = {
         // Any additional optional fields
         sampleRate: 5,
         siteSpeedSampleRate: 10,
-        cookieDomain: "https://hikki12.github.io/sinculpa",
+        cookieDomain: "https://www.sinculpaloja.com/",
         // defaults to false
         enableWebVitalsTracking: true,
       },

@@ -3,9 +3,7 @@ import * as React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 
 // Components
-import { Carousel } from '@/components/Carousel';
 import { GridFood } from "@/components/GridFood";
-import { MenuCard } from "@/components/MenuCard";
 
 // API
 import { arepas } from "@/api/arepas";
