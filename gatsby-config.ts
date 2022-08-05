@@ -12,6 +12,7 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-plugin-smoothscroll",
     "gatsby-transformer-sharp",
+    "gatsby-plugin-cname",
     {
       resolve: 'gatsby-source-filesystem',
       options: {
