@@ -23,6 +23,7 @@ import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 
 // Styles
 import "@/styles/index.css";
+import { SEO } from "@/components/SEO";
 // import { useRef } from "react";
 
 export default function IndexPage() {
@@ -103,7 +104,7 @@ export default function IndexPage() {
       </section>
 
       <section className={`w-full min-h-[100vh]  bg-desert bg-cover  scroll-smooth bg-black/80  text-white`}>
-        <div className="bg-black/90 w-full h-full grid place-content-center py-16">
+        <div className="bg-black/70 w-full min-h-screen grid place-content-center py-16">
         <div className="flex flex-col lg:flex-row mx-auto items-center max-w-[800px] my-auto py-12  gap-12">
             <div className="flex flex-col items-center gap-4">
               <StaticImage
@@ -197,7 +198,7 @@ export default function IndexPage() {
         </div>
       </section>
 
-      <section id="cocktails-section" className="min-h-[100vh] grid place-content-center bg-drinks-mobile bg-cover  bg-center lg:bg-drinks lg:py-12">
+      <section id="cocktails-section" className="min-h-[100vh] grid place-content-center bg-drinks-mobile bg-cover  bg-center lg:py-12">
         <div className="glassmorphism-black py-12 min-w-[330px] max-w-[500px] mx-auto">
           <p className="text-center font-bold font-cookie text-6xl lg:text-7xl mb-12 text-yellow-600">Cócteles bajos en calorías</p>
           <div className="grid gap-3 w-80 md:w-[30rem] mx-auto px-2 lg:px-4">
@@ -237,7 +238,7 @@ export default function IndexPage() {
       </section>
 
       <section id="hotdrinks-section" className="w-full min-h-[100vh] bg-postre bg-center bg-cover grid place-content-center px-4 py-12">
-        <div className="glassmorphism-white px-4 w-[330px] lg:w-[500px] mx-auto py-12 text-pink-800">
+        <div className="glassmorphism-white px-4 w-[330px] lg:w-[500px] mx-auto py-12 text-black">
           <p className="text-center font-cookie text-5xl mt-10 mb-20 w-[300px] mx-auto">Bebidas calientes y postres</p>
           {hotdrinks.map(drink => (
             <div className="font-bold flex justify-between my-3 text-xl">
@@ -251,3 +252,6 @@ export default function IndexPage() {
   )
 }
 
+export const Head = () => (
+  <SEO />
+)
