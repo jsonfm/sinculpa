@@ -3,8 +3,8 @@ import { useSiteMetadata } from "@/hooks/use-site-metadata";
 
 
 export const SEO = ({ title, description, pathname, children }: SEOProps) => {
+  console.log("seo: ");
   const { title: defaultTitle, description: defaultDescription, image, siteUrl, twitterUsername } = useSiteMetadata();
-
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
@@ -12,6 +12,7 @@ export const SEO = ({ title, description, pathname, children }: SEOProps) => {
     url: `${siteUrl}${pathname || ``}`,
     twitterUsername,
   }
+
 
   return (
     <>

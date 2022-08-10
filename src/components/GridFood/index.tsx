@@ -5,7 +5,7 @@ const GridFood = ({ food }: GridFoodProps) => {
     return(
     <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-5 place-content-center container max-w-[1000px] mx-auto px-4">
       {food.map((item, index) => (
-        <div className="flex flex-col w-full border-4 border-[#fff] hover:cursor-pointer hover:scale-105 ease-in duration-300" key={index}>
+        <div className="flex flex-col w-full border-4 border-[#fff] hover:cursor-pointer hover:scale-105 ease-in duration-300" key={`food-${index}`}>
           <img
             src={item.image}
             className="w-full h-48 md:h-64 xl:h-72 object-cover"

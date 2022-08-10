@@ -1,7 +1,8 @@
 // Gatsby / React
 import * as React from "react";
+// import { HeadProps } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
-
+// import type { HeadProps } from "gatsby";
 // Components
 import { GridFood } from "@/components/GridFood";
 
@@ -14,7 +15,7 @@ import { yogurts } from "@/api/yogurts";
 import { snacks } from "@/api/snacks";
 import { lights } from "@/api/lights";
 import { drinks } from "@/api/drinks";
-import {hotdrinks } from "@/api/hotdrinks";
+import { hotdrinks } from "@/api/hotdrinks";
 
 // Plugins
 import scrollTo from 'gatsby-plugin-smoothscroll';
@@ -27,7 +28,6 @@ import { SEO } from "@/components/SEO";
 // import { useRef } from "react";
 
 export default function IndexPage() {
-
   return (
     <>
       <section className={`w-full min-h-[100vh] lg:py-12 grid lg:grid-cols-2 place-content-center bg-woods bg-cover  text-white ease-out duration-300 z-10`}>
@@ -59,8 +59,8 @@ export default function IndexPage() {
       <section id="snacks-section" className="w-full min-h-screen bg-[#494949] text-white py-16 xl:py-32">
         <p className="font-bold text-center font-cookie text-yellow-600 text-6xl mb-12 md:mb-24 xl:mb-32 mx-auto rounded-md w-64 relative">A toda hora</p>
         <div className="grid md:grid-cols-2 xl:grid-cols-3 lg:px-32 gap-6 md:gap-32 xl:gap-16 px-5 place-content-center">
-        {snacks.map((snack) =>(
-          <div className="relative flex flex-col item-center w-full">
+        {snacks.map((snack, index) =>(
+          <div className="relative flex flex-col item-center w-full" key={`snack-${index}`}>
             <img
               loading="lazy"
               src={`${snack.image}?w=600`}
@@ -88,7 +88,7 @@ export default function IndexPage() {
               <div  className="fast-choice-menu">
                   <p className="text-center mb-20 font-cookie text-4xl">Opciones Ligeras</p>
                   {lights.map((light, index) => (
-                    <div className="flex justify-between my-4 text-lg" key={index}>
+                    <div className="flex justify-between my-4 text-lg" key={`light-${index}`}>
                       <p className="w-[60%] text-yellow-600">{light.name}</p>
                       <p className="font-bold">$ {light.price.toFixed(2)}</p>
                     </div>
@@ -140,7 +140,7 @@ export default function IndexPage() {
           </div>
 
           {yogurts.slice(1).map((yogurt, index) =>(
-            <div className="flex flex-col md:flex-row gap-4 items-center z-10 mx-auto my-4">
+            <div className="flex flex-col md:flex-row gap-4 items-center z-10 mx-auto my-4" key={`yogurt-${index}`}>
               <img
                 loading="lazy"
                 src={`${yogurt.image}?w=600`}
@@ -162,7 +162,7 @@ export default function IndexPage() {
         <p className="text-white text-center font-bold font-cookie text-6xl lg:text-7xl mb-12">Arepas</p>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 place-content-center container-lg mx-auto  px-4">
         {arepas.map((item, index) =>(
-          <div className="flex flex-col w-full border-4 border-white hover:drop-shadow-xl hover:lg:-translate-y-3 ease-out duration-300 hover:cursor-pointer" key={index}>
+          <div className="flex flex-col w-full border-4 border-white hover:drop-shadow-xl hover:lg:-translate-y-3 ease-out duration-300 hover:cursor-pointer" key={`arepa-${index}`}>
             <img
               loading="lazy"
               src={`${item.image}?w=600`}
@@ -182,7 +182,7 @@ export default function IndexPage() {
         <p className="mb-12 font-cookie text-6xl text-center">Meriendas</p>
         <div className="grid md:grid-cols-2 gap-y-5 place-content-center place-items-center container-lg mx-auto">
           {dinners.map((dinner, index) => (
-            <div className="w-[95%] border-2 text-white  hover:lg:-translate-y-3 ease-out duration-300 hover:cursor-pointer" key={index}>
+            <div className="w-[95%] border-2 text-white  hover:lg:-translate-y-3 ease-out duration-300 hover:cursor-pointer" key={`dinner-${index}`}>
               <img
                 loading="lazy"
                 src={`${dinner.image}?w=600`}
@@ -203,7 +203,7 @@ export default function IndexPage() {
           <p className="text-center font-bold font-cookie text-6xl lg:text-7xl mb-12 text-yellow-600">Cócteles bajos en calorías</p>
           <div className="grid gap-3 w-80 md:w-[30rem] mx-auto px-2 lg:px-4">
             {cocktails.map((cocktail, index) =>(
-              <div className="flex justify-between text-white text-xl" key={index}>
+              <div className="flex justify-between text-white text-xl" key={`cocktails-${index}`}>
                 <div className="flex flex-col w-4/6 md:w-5/6">
                   <p className="font-bold text-yellow-600">{cocktail.name}</p>
                   <p className="text-base"> {cocktail.ingredients}</p>
@@ -220,13 +220,13 @@ export default function IndexPage() {
             <p className="text-6xl font-bold font-cookie text-center mb-12">Jugos y Batidos</p>
             {/* <div className="h-1 w-full bg-white mt-2 mb-6"></div> */}
             {drinks.map((drink, index) => (
-              <div className="flex flex-col my-3" key={index}>
+              <div className="flex flex-col my-3" key={`drink-${index}`}>
                 <div className="flex justify-between">
                   <div className="flex flex-col w-[70%]">
                     <p className="text-2xl font-bold mb-1">{drink.name}</p>
                     <ul className="list-disc pl-7 text-xl">
                       {drink.ingredients && drink.ingredients.split(",").map((taste, index) => (
-                        <li className="capitalize">{taste}</li>
+                        <li className="capitalize" key={`taste-${index}`}>{taste}</li>
                       ))}
                     </ul>
                   </div>
@@ -240,8 +240,8 @@ export default function IndexPage() {
       <section id="hotdrinks-section" className="w-full min-h-[100vh] bg-postre bg-center bg-cover grid place-content-center px-4 py-12">
         <div className="glassmorphism-white px-4 w-[330px] lg:w-[500px] mx-auto py-12 text-black">
           <p className="text-center font-cookie text-5xl mt-10 mb-20 w-[300px] mx-auto">Bebidas calientes y postres</p>
-          {hotdrinks.map(drink => (
-            <div className="font-bold flex justify-between my-3 text-xl">
+          {hotdrinks.map((drink, index) => (
+            <div className="font-bold flex justify-between my-3 text-xl" key={`hotdrink-${index}`}>
               <p>{drink.name}</p>
               <p className="text-xl">$ {drink.price.toFixed(2)}</p>
             </div>
@@ -252,6 +252,8 @@ export default function IndexPage() {
   )
 }
 
-export const Head = () => (
-  <SEO />
-)
+export function Head(){
+  return <SEO />
+}
+
+
