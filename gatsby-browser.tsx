@@ -24,4 +24,3 @@ export const wrapRootElement = ({ element }): JSX.Element => {
     </ParallaxProvider>
   );
 }
-

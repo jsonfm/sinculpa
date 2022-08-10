@@ -1,8 +1,7 @@
 // Gatsby / React
 import * as React from "react";
-// import { HeadProps } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
-// import type { HeadProps } from "gatsby";
+
 // Components
 import { GridFood } from "@/components/GridFood";
 
@@ -252,8 +251,6 @@ export default function IndexPage() {
   )
 }
 
-export function Head(){
-  return <SEO />
-}
-
-
+export const Head = () => (
+  <SEO />
+)
