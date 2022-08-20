@@ -24,12 +24,13 @@ import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 // Styles
 import "@/styles/index.css";
 import { SEO } from "@/components/SEO";
+import { Leaf } from "@/components/svgs/Leaf";
 // import { useRef } from "react";
 
 export default function IndexPage() {
   return (
     <>
-      <section className={`w-full min-h-[100vh] lg:py-12 grid lg:grid-cols-2 place-content-center bg-woods bg-cover  text-white ease-out duration-300 z-10`}>
+      <section className={`w-full min-h-[100vh] max-h-[600px] lg:py-12 grid lg:grid-cols-2 place-content-center bg-woods bg-cover  text-white ease-out duration-300 z-10`}>
         <div className="hidden lg:flex items-center font-poiret justify-center text-4xl light-on bg-black/20">Encuentra el equilibrio</div>
         <div className="menu-card">
           <StaticImage
@@ -40,16 +41,16 @@ export default function IndexPage() {
             objectFit="contain"
           />
           <p className="text-5xl mt-6 mb-8 font-cookie underline underline-offset-2">Menú</p>
-          <div className="grid grid-cols-2 gap-y-3 place-content-center text-xl text-center px-2">
-            <p onClick={() => scrollTo("#snacks-section")} className="menu-name light-on delay-75">- A toda hora</p>
-            <p onClick={() => scrollTo("#fast-options")} className="menu-name light-on delay-100">- Opciones Ligeras</p>
-            <p onClick={() => scrollTo("#arepas-section")} className="menu-name light-on delay-150">- Arepas</p>
-            <p onClick={() => scrollTo("#salads-section")} className="menu-name light-on delay-200">- Ensaladas</p>
-            <p onClick={() => scrollTo("#dinners-section")} className="menu-name light-on delay-300">- Meriendas</p>
-            <p onClick={() => scrollTo("#cocktails-section")} className="menu-name light-on">- Cócteles</p>
-            <p onClick={() => scrollTo("#fruits-section")} className="menu-name light-on">- Ensaladas de Frutas</p>
-            <p onClick={() => scrollTo("#juices-section")} className="menu-name light-on">- Jugos y batidos</p>
-            <p onClick={() => scrollTo("#hotdrinks-section")} className="menu-name light-on">- Bebidas calientes y postres</p>
+          <div className="grid grid-cols-2 gap-y-3 place-content-center text-xl text-center px-6 mb-4">
+            <div onClick={() => scrollTo("#snacks-section")} className="menu-name light-on delay-75"><Leaf/> <p className="w-[90%] text-start">A toda hora</p></div>
+            <div onClick={() => scrollTo("#fast-options")} className="menu-name light-on delay-100"><p className="w-[90%] text-end">Opciones Ligeras</p> <Leaf/></div>
+            <div onClick={() => scrollTo("#arepas-section")} className="menu-name light-on delay-150"><Leaf/> <p className="w-[90%] text-start">Arepas</p></div>
+            <div onClick={() => scrollTo("#salads-section")} className="menu-name light-on delay-200 justify-end"><p className="w-[90%] text-end">Ensaladas</p> <Leaf/></div>
+            <div onClick={() => scrollTo("#dinners-section")} className="menu-name light-on delay-300"><Leaf/> <p className="w-[90%] text-start">Meriendas</p></div>
+            <div onClick={() => scrollTo("#cocktails-section")} className="menu-name light-on justify-end"><p className="w-[90%] text-end">Cócteles </p><Leaf/></div>
+            <div onClick={() => scrollTo("#fruits-section")} className="menu-name light-on"><Leaf/> <p className="w-[90%] text-start">Ensaladas de Frutas</p></div>
+            <div onClick={() => scrollTo("#juices-section")} className="menu-name light-on justify-end"><p className="w-[90%] text-end">Jugos y batidos </p><Leaf/></div>
+            <div onClick={() => scrollTo("#hotdrinks-section")} className="menu-name light-on"><Leaf/> <p className="w-[90%] text-start">Bebidas calientes y postres</p></div>
           </div>
           <p className="mt-auto lg:hidden font-cookie text-2xl self-end px-5 mb-4">Encuentra el equilibrio</p>
         </div>
@@ -66,9 +67,9 @@ export default function IndexPage() {
               className="h-80 w-80 lg:h-72 xl:h-80 rounded-full border-4 border-white mx-auto mb-4 object-cover"
             />
             <p className="-mt-10 w-24 text-yellow-700 text-center mb-4 mx-auto p-4 rounded-md bg-white font-bold text-xl">$ {snack.price.toFixed(2)}</p>
-            <div className="bg-white h-40 w-72 px-5 py-3 mx-auto rounded-md text-black">
-              <p className="text-xl font-bold text-yellow-700 ">{snack.name}</p>
-              <p className="text-black h-[50%] overflow-y-auto">{snack.ingredients}</p>
+            <div className="bg-white min-h-40 md:h-48 w-72 px-5 py-5 mx-auto rounded-md text-black flex flex-col">
+              <p className="text-xl font-bold text-yellow-700">{snack.name}</p>
+              <p className="text-black h-[70%] overflow-y-auto my-auto">{snack.ingredients}</p>
             </div>
           </div>
         ))}
@@ -115,7 +116,7 @@ export default function IndexPage() {
             </div>
             <div className="font-cookie text-center text-4xl lg:text-5xl min-w-[300px] max-w-[500px]">
               <p className="mx-auto">Nadie llega a la tierra prometida, sin antes pasar por el desierto.</p>
-              <p className="mt-4 text-3xl">{`~Izai pino.`}</p>
+              <p className="mt-4 text-3xl">{`~Izai Pino.`}</p>
             </div>
           </div>
         </div>
@@ -177,7 +178,7 @@ export default function IndexPage() {
         </div>
       </section>
 
-      <section id="dinners-section" className="w-full min-h-[100vh] py-12 xl:py-32 md:px-16 xl:px-32 bg-[#2c2b2b] text-white">
+      <section id="dinners-section" className="w-full min-h-[100vh] py-12 xl:py-32 md:px-4 bg-[#2c2b2b] text-white">
         <p className="mb-12 font-cookie text-6xl text-center">Meriendas</p>
         <div className="grid md:grid-cols-2 gap-y-5 place-content-center place-items-center container-lg mx-auto">
           {dinners.map((dinner, index) => (

@@ -15,6 +15,7 @@ import { useSelector, useDispatch } from 'react-redux';
 // Styles
 import "./styles.css";
 import { FlowersDivider } from "../svgs/FlowersDivider";
+import { Leaf } from "../svgs/Leaf";
 
 
 const Header = () => {
@@ -72,16 +73,16 @@ const Header = () => {
                             <p className="font-cookie text-6xl mt-6 underline underline-offset-2">Menú</p>
                             <FlowersDivider className="text-white"/>
                             <div className="mt-5">
-                                <div className="grid grid-cols-2 mt-4 gap-y-6 text-white font-cookie text-xl text-center px-4">
-                                  <p onClick={async () => scrollFromTo('#snacks-section')} className="menu-name">-A toda hora</p>
-                                  <p onClick={async () => scrollFromTo('#fast-options')} className="menu-name">-Opciones Rápidas</p>
-                                  <p onClick={async () => scrollFromTo('#arepas-section')} className="menu-name">-Arepas</p>
-                                  <p onClick={async () => scrollFromTo('#salads-section')} className="menu-name">-Ensaladas</p>
-                                  <p onClick={async () => scrollFromTo('#fruits-section')} className="menu-name">-Ensaladas de frutas</p>
-                                  <p onClick={async () => scrollFromTo('#cocktails-section')} className="menu-name">-Cócteles</p>
-                                  <p onClick={async () => scrollFromTo('#dinners-section')} className="menu-name">-Meriendas</p>
-                                  <p onClick={async () => scrollFromTo('#juices-section')} className="menu-name">-Jugos y batidos</p>
-                                  <p onClick={async () => scrollFromTo('#hotdrinks-section')} className="menu-name">-Bebidas calientes y postres</p>
+                                <div className="grid grid-cols-2 mt-4 gap-y-6 text-white font-cookie text-xl text-center px-6">
+                                <div onClick={() => scrollFromTo("#snacks-section")} className="menu-name"><Leaf/> <p className="w-[90%] text-start">A toda hora</p></div>
+                                <div onClick={() => scrollFromTo("#fast-options")} className="menu-name"><p className="w-[90%] text-end">Opciones Ligeras</p> <Leaf/></div>
+                                <div onClick={() => scrollFromTo("#arepas-section")} className="menu-name"><Leaf/> <p className="w-[90%] text-start">Arepas</p></div>
+                                <div onClick={() => scrollFromTo("#salads-section")} className="menu-name justify-end"><p className="w-[90%] text-end">Ensaladas</p> <Leaf/></div>
+                                <div onClick={() => scrollFromTo("#dinners-section")} className="menu-name"><Leaf/> <p className="w-[90%] text-start">Meriendas</p></div>
+                                <div onClick={() => scrollFromTo("#cocktails-section")} className="menu-name"><p className="w-[90%] text-end">Cócteles </p><Leaf/></div>
+                                <div onClick={() => scrollFromTo("#fruits-section")} className="menu-name"><Leaf/> <p className="w-[90%] text-start">Ensaladas de Frutas</p></div>
+                                <div onClick={() => scrollFromTo("#juices-section")} className="menu-name"><p className="w-[90%] text-end">Jugos y batidos </p><Leaf/></div>
+                                <div onClick={() => scrollFromTo("#hotdrinks-section")} className="menu-name"><Leaf/> <p className="w-[90%] text-start">Bebidas calientes y postres</p></div>
                                 </div>
                             </div>
                         </div>

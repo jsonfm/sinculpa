@@ -14,10 +14,10 @@
 
 @layer components {
   .menu-name {
-    @apply hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300 font-poiret;
+    @apply hover:cursor-pointer focus:scale-110 hover:scale-125 ease-in duration-300 font-poiret flex items-center gap-2;
   }
   .menu-card {
-    @apply place-self-start flex flex-col items-center mx-auto lg:ml-3 w-[22rem] md:w-[23rem] border border-white rounded-md min-h-[90vh] lg:min-h-[38rem] pt-12 z-10 bg-zinc-900/80;
+    @apply place-self-start flex flex-col items-center mx-auto lg:ml-3 w-[22rem] md:w-[23rem] border border-white rounded-md min-h-[90vh] md:min-h-[70vh] lg:min-h-[38rem] max-h-[600px] pt-12 pb-12 z-10 bg-black/70;
   }
 
   .fast-choice-menu {
