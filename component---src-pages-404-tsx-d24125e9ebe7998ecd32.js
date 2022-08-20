@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunksinculpa=self.webpackChunksinculpa||[]).push([[218],{2513:function(e,n,t){t.r(n);var c=t(7294),l=t(1597);n.default=function(){return c.createElement("main",{className:"min-h-screen text-white flex flex-col justify-center items-center"},c.createElement("p",{className:"text-3xl"},"Recurso no encontrado 😔"),c.createElement(l.Link,{className:"mt-3 underline underline-offset-2",to:"/"},"Volver"))}}}]);
+//# sourceMappingURL=component---src-pages-404-tsx-d24125e9ebe7998ecd32.js.map
