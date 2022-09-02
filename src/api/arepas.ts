@@ -3,7 +3,7 @@ const arepas: Product[] = [
         "name": "Arepa sin culpa",
         "ingredients": "Huevo frito, poroto negro, queso, pollo, guisado.",
         "price": 3.50,
-        "image": "https://cdn.vox-cdn.com/thumbor/2pllrrWb0RBDkxpUeDBFoPN__kE=/1400x1050/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/22872590/VICTA_EATER_AT_HOME_VENEZUELAN_AREPAS__1.jpg",
+        "image": "https://sinculpasite.files.wordpress.com/2022/09/arepasinculpa.jpeg",
         "category": {name: "arepa"},
     },
     {
@@ -45,7 +45,7 @@ const arepas: Product[] = [
         "name": "Pabellón",
         "ingredients": "Carne mechada, queso, aguacate, poroto negro.",
         "price": 3.50,
-        "image": "https://www.goya.com/media/4484/arepa-de-domino-venezuelan-corncake-filled-with-black-beans.jpg?quality=80",
+        "image": "https://sinculpasite.files.wordpress.com/2022/09/arepapabellon.jpeg",
         "category": {name: "arepa"},
     },
     {
@@ -59,7 +59,7 @@ const arepas: Product[] = [
         "name": "Arepa Zai",
         "ingredients": "Carne mechada, Platano frito, queso mozzarella.",
         "price": 3.50,
-        "image": "https://sinculpasite.files.wordpress.com/2022/07/arepazai.jpeg",
+        "image": "https://sinculpasite.files.wordpress.com/2022/09/arepazai.jpeg",
         "category": {name: "arepa"},
     },
     {

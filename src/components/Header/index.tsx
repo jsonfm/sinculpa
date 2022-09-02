@@ -69,7 +69,7 @@ const Header = () => {
                 { showMenuCollapse &&
                 <div className={`fixed top-0 w-full h-screen text-white overflow-hidden overscroll-none z-50`}>
                     <div className={`${animation} relative top-0 flex-col items-center h-full z-30`}>
-                        <div className="h-full border-4 text-white flex flex-col items-center">
+                        <div className="h-full  text-white flex flex-col items-center">
                             <p className="font-cookie text-6xl mt-6 underline underline-offset-2">Menú</p>
                             <FlowersDivider className="text-white"/>
                             <div className="mt-5">
@@ -89,7 +89,7 @@ const Header = () => {
                     </div>
                 </div>
                 }
-                <div className={`${showMenuCollapse ? 'propagation-increase bg-lime-900/90 z-20' : 'bg-black/10 propagation-decrease'} ${!showCollapseButtons && 'hidden'} fixed bottom-28 right-5 rounded-full w-16 h-16`}></div>
+                <div className={`${showMenuCollapse ? 'propagation-increase bg-[#5f381be3] z-20' : 'bg-black/10 propagation-decrease'} ${!showCollapseButtons && 'hidden'} fixed bottom-28 right-5 rounded-full w-16 h-16`}></div>
 
                 <div className={`${!showCollapseButtons && 'hidden'} flex flex-col text-white items-center gap-5 fixed bottom-28 right-5 z-50 jump-animation`}>
                   <div className="text-4xl">

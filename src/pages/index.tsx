@@ -30,8 +30,13 @@ import { Leaf } from "@/components/svgs/Leaf";
 export default function IndexPage() {
   return (
     <>
-      <section className={`w-full min-h-[100vh] max-h-[600px] lg:py-12 grid lg:grid-cols-2 place-content-center bg-woods bg-cover  text-white ease-out duration-300 z-10`}>
-        <div className="hidden lg:flex items-center font-poiret justify-center text-4xl light-on bg-black/20">Encuentra el equilibrio</div>
+      <section className={`relative border-b-2 py-12 min-h-screen w-full grid lg:grid-cols-2 place-content-center text-white ease-out duration-300 z-10`}>
+        <StaticImage
+          src="../images/spiralbrownhd2.png"
+          alt="spiral"
+          class="w-full max-w-[600px] absolute bottom-0 left-1/2 -translate-x-1/2"
+        />
+        <div className="hidden lg:flex items-center font-poiret justify-center text-4xl light-on bg-black/0">Encuentra el equilibrio</div>
         <div className="menu-card">
           <StaticImage
             alt="logo"
@@ -56,8 +61,8 @@ export default function IndexPage() {
         </div>
       </section>
 
-      <section id="snacks-section" className="w-full min-h-screen bg-[#494949] text-white py-16 xl:py-32">
-        <p className="font-bold text-center font-cookie text-yellow-600 text-6xl mb-12 md:mb-24 xl:mb-32 mx-auto rounded-md w-64 relative">A toda hora</p>
+      <section id="snacks-section" className="w-full min-h-screen text-white py-16 xl:py-32">
+        <p className="font-bold text-center font-cookie text-[#7e4e2c] text-6xl mb-12 md:mb-24 xl:mb-32 mx-auto rounded-md w-64 relative">A toda hora</p>
         <div className="grid md:grid-cols-2 xl:grid-cols-3 lg:px-32 gap-6 md:gap-32 xl:gap-16 px-5 place-content-center">
         {snacks.map((snack, index) =>(
           <div className="relative flex flex-col item-center w-full" key={`snack-${index}`}>
@@ -76,28 +81,28 @@ export default function IndexPage() {
         </div>
       </section>
 
-      <section id="fast-options" className="relative min-h-[70vh] bg-black/20">
+      <section id="fast-options" className="relative min-h-[70vh] bg-black/60">
           <ParallaxBanner
                 layers={[{
-                  "image": "https://images.pexels.com/photos/5562924/pexels-photo-5562924.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                  "image": "https://sinculpasite.files.wordpress.com/2022/09/emapanaditas.jpeg",
                   "speed": -20
                 }]}
                 className="absolute top-0 w-full min-h-[100vh]"
           />
-            <div className="absolute top-0 w-full h-full bg-black/80 grid place-content-center ">
+            <div className="absolute top-0 w-full h-full bg-black/50 grid place-content-center ">
               <div  className="fast-choice-menu">
-                  <p className="text-center mb-20 font-cookie text-4xl">Opciones Ligeras</p>
+                  <p className="text-[#7e4e2c] text-center mb-20 font-cookie text-4xl">Opciones Ligeras</p>
                   {lights.map((light, index) => (
                     <div className="flex justify-between my-4 text-lg" key={`light-${index}`}>
-                      <p className="w-[60%] text-yellow-600">{light.name}</p>
+                      <p className="w-[60%] text-[#7e4e2c]">{light.name}</p>
                       <p className="font-bold">$ {light.price.toFixed(2)}</p>
                     </div>
                   ))}
               </div>
             </div>
       </section>
-      <section id="salads-section" className="min-h-[100vh] py-12 md:py-24 xl:py-32 bg-yellow-700">
-        <p className="text-center text-white font-cookie text-6xl lg:text-7xl mb-12">Ensaladas</p>
+      <section id="salads-section" className="min-h-[100vh] py-12 md:py-24 xl:py-32 ">
+        <p className="text-center text-brown font-cookie text-6xl lg:text-7xl mb-12">Ensaladas</p>
         <GridFood
           food={salads}
         />
@@ -122,21 +127,15 @@ export default function IndexPage() {
         </div>
       </section>
 
-      <section id="fruits-section" className="w-full relative grid min-h-[100vh] lg:bg-cover scroll-smooth">
-        <ParallaxBanner
-          layers={[{
-            "image": "https://sinculpasite.files.wordpress.com/2022/07/threefruits.jpeg",
-            "speed": -40
-          }]}
-          className="py-12"
-        >
-        <div className="bg-black/60 absolute top-0 left-0 w-full h-full z-10"></div>
+      <section id="fruits-section" className="w-full py-24 relative grid min-h-[100vh] lg:bg-cover scroll-smooth">
+        <div className=" absolute top-0 left-0 w-full h-full z-10"></div>
         <div className="z-10 w-full grid gap-3 place-content-center">
-          <div className="w-[330px] lg:w-[500px] min-h-96 rounded-md bg-yellow-600/80 text-white mx-auto  px-4 py-7 mb-12 z-10">
-            <p className="font-bold text-3xl">{yogurts[0].name}</p>
+          <p className="text-center text-brown z-10 text-6xl mb-12 font-cookie">Ensaladas de Frutas</p>
+          <div className="w-[330px] lg:w-[500px] min-h-96 rounded-md bg-brown text-white mx-auto  px-4 py-7 mb-12 z-10">
+            <p className="font-bold text-xl">{yogurts[0].name}</p>
             <div className="w-[95%] mb-2 h-[2px] bg-white mt-2"></div>
             <p className="text-xl mt-2">{yogurts[0].ingredients}</p>
-            <p className="text-4xl text-end mt-3 font-bold">$ {yogurts[0].price.toFixed(2)}</p>
+            <p className="text-xl text-end mt-3 font-bold">$ {yogurts[0].price.toFixed(2)}</p>
           </div>
 
           {yogurts.slice(1).map((yogurt, index) =>(
@@ -146,7 +145,7 @@ export default function IndexPage() {
                 src={`${yogurt.image}?w=600`}
                 className="w-64 h-64 rounded-full border-4 object-cover"
               />
-              <div className="bg-yellow-600/80 lg:h-[60%] w-[20rem] lg:w-[24rem] text-white p-4 rounded-md font-bold">
+              <div className="bg-brown lg:h-[60%] w-[20rem] lg:w-[24rem] text-white p-4 rounded-md font-bold">
                 <p className="font-bold text-xl">{yogurt.name}</p>
                 <div className="w-[95%] mb-2 h-[2px] bg-white"></div>
                 <p className="h-[50%] overflow-y-auto">{yogurt.ingredients}</p>
@@ -155,14 +154,13 @@ export default function IndexPage() {
             </div>
           ))}
         </div>
-        </ParallaxBanner>
       </section>
 
-      <section id="arepas-section" className="w-full min-h-[100vh] bg-[#894f28] py-12 pb-32">
-        <p className="text-white text-center font-bold font-cookie text-6xl lg:text-7xl mb-12">Arepas</p>
+      <section id="arepas-section" className="w-full min-h-[100vh] py-12 pb-32">
+        <p className="text-brown text-center font-bold font-cookie text-6xl lg:text-7xl mb-12">Arepas</p>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 place-content-center container-lg mx-auto  px-4">
         {arepas.map((item, index) =>(
-          <div className="flex flex-col w-full border-4 border-white hover:drop-shadow-xl hover:lg:-translate-y-3 ease-out duration-300 hover:cursor-pointer" key={`arepa-${index}`}>
+          <div className="flex flex-col w-full hover:drop-shadow-xl hover:lg:-translate-y-3 ease-out duration-300 hover:cursor-pointer" key={`arepa-${index}`}>
             <img
               loading="lazy"
               src={`${item.image}?w=600`}
@@ -178,34 +176,34 @@ export default function IndexPage() {
         </div>
       </section>
 
-      <section id="dinners-section" className="w-full min-h-[100vh] py-12 xl:py-32 md:px-4 bg-[#2c2b2b] text-white">
-        <p className="mb-12 font-cookie text-6xl text-center">Meriendas</p>
+      <section id="dinners-section" className="w-full min-h-[100vh] py-12 xl:py-32 md:px-4 text-white">
+        <p className="mb-12 font-cookie text-6xl text-center text-brown">Meriendas</p>
         <div className="grid md:grid-cols-2 gap-y-5 place-content-center place-items-center container-lg mx-auto">
           {dinners.map((dinner, index) => (
-            <div className="w-[95%] border-2 text-white  hover:lg:-translate-y-3 ease-out duration-300 hover:cursor-pointer" key={`dinner-${index}`}>
+            <div className="w-[95%]  text-white  hover:lg:-translate-y-3 ease-out duration-300 hover:cursor-pointer" key={`dinner-${index}`}>
               <img
                 loading="lazy"
                 src={`${dinner.image}?w=600`}
-                className="w-full h-48 md:h-64 xl:h-72 object-cover"
+                className="w-full h-48 md:h-64 xl:h-72 object-cover mb-4"
               />
-              <div className=" h-48 py-2 px-4 lg:px-8">
-                <p className="text-xl font-bold py-2">{dinner.name}</p>
-                <div className="h-[50%] pt-2 overflow-y-auto overscroll-y-auto">{dinner.ingredients}</div>
-                <div className="text-xl font-bold text-end">$ {dinner.price.toFixed(2)}</div>
+              <div className="h-48 py-2">
+                <p className="text-xl font-bold bg-white text-brown w-4/6 px-4 mb-2">{dinner.name}</p>
+                <div className="h-[50%] pt-2 overflow-y-auto overscroll-y-auto px-4">{dinner.ingredients}</div>
+                <div className="text-xl lg:text-xl font-bold text-end bg-white text-brown px-4">$ {dinner.price.toFixed(2)}</div>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      <section id="cocktails-section" className="min-h-[100vh] grid place-content-center bg-drinks-mobile bg-cover  bg-center lg:py-12">
+      <section id="cocktails-section" className="min-h-[100vh] grid place-content-center bg-drinks-mobile lg:bg-drinks bg-cover  bg-center lg:py-12">
         <div className="glassmorphism-black py-12 min-w-[330px] max-w-[500px] mx-auto">
-          <p className="text-center font-bold font-cookie text-6xl lg:text-7xl mb-12 text-yellow-600">Cócteles bajos en calorías</p>
+          <p className="text-center font-bold font-cookie text-6xl lg:text-7xl mb-12 text-brown">Cócteles bajos en calorías</p>
           <div className="grid gap-3 w-80 md:w-[30rem] mx-auto px-2 lg:px-4">
             {cocktails.map((cocktail, index) =>(
               <div className="flex justify-between text-white text-xl" key={`cocktails-${index}`}>
                 <div className="flex flex-col w-4/6 md:w-5/6">
-                  <p className="font-bold text-yellow-600">{cocktail.name}</p>
+                  <p className="font-bold text-brown">{cocktail.name}</p>
                   <p className="text-base"> {cocktail.ingredients}</p>
                 </div>
                 <p>$ {cocktail.price.toFixed(2)}</p>
@@ -215,12 +213,11 @@ export default function IndexPage() {
         </div>
       </section>
 
-      <section id="juices-section" className="w-full min-h-[100vh] grid place-content-center  py-6 bg-juices-mobile bg-center lg:bg-juices bg-cover">
-          <div className="glassmorphism-yellow min-h-64 text-white p-5 border-4 min-w-[330px] md:min-w-[400px] max-w-[500px] mx-auto">
+      <section id="juices-section" className="w-full min-h-[100vh] grid place-content-center lg:py-6 bg-juices-mobile bg-center lg:bg-juices bg-cover">
+          <div className="glassmorphism-brown min-h-screen text-white w-[100vw] max-w-[500px] px-8 py-12">
             <p className="text-6xl font-bold font-cookie text-center mb-12">Jugos y Batidos</p>
-            {/* <div className="h-1 w-full bg-white mt-2 mb-6"></div> */}
             {drinks.map((drink, index) => (
-              <div className="flex flex-col my-3" key={`drink-${index}`}>
+              <div className="flex flex-col my-3 w-full" key={`drink-${index}`}>
                 <div className="flex justify-between">
                   <div className="flex flex-col w-[70%]">
                     <p className="text-2xl font-bold mb-1">{drink.name}</p>
@@ -237,8 +234,8 @@ export default function IndexPage() {
           </div>
       </section>
 
-      <section id="hotdrinks-section" className="w-full min-h-[100vh] bg-postre bg-center bg-cover grid place-content-center px-4 py-12">
-        <div className="glassmorphism-white px-4 w-[330px] lg:w-[500px] mx-auto py-12 text-black">
+      <section id="hotdrinks-section" className="w-full min-h-[100vh] bg-postre-mobile lg:bg-postre bg-center bg-cover grid place-content-center px-4 lg:py-12">
+        <div className="glassmorphism-white min-h-screen py-12 px-4 w-[100vw] max-w-[500px] mx-auto text-brown">
           <p className="text-center font-cookie text-5xl mt-10 mb-20 w-[300px] mx-auto">Bebidas calientes y postres</p>
           {hotdrinks.map((drink, index) => (
             <div className="font-bold flex justify-between my-3 text-xl" key={`hotdrink-${index}`}>
