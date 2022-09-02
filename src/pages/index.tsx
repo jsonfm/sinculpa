@@ -30,34 +30,37 @@ import { Leaf } from "@/components/svgs/Leaf";
 export default function IndexPage() {
   return (
     <>
-      <section className={`relative border-b-2 py-12 min-h-screen w-full grid lg:grid-cols-2 place-content-center text-white ease-out duration-300 z-10`}>
+      <section className={`relative border-b-2 py-12 min-h-screen w-full text-white ease-out duration-300 z-10`}>
         <StaticImage
           src="../images/spiralbrownhd2.png"
           alt="spiral"
-          class="w-full max-w-[600px] absolute bottom-0 left-1/2 -translate-x-1/2"
+          style={{position: "absolute"}}
+          className="bottom-0 w-full max-w-[600px] left-1/2 -translate-x-1/2"
         />
-        <div className="hidden lg:flex items-center font-poiret justify-center text-4xl light-on bg-black/0">Encuentra el equilibrio</div>
-        <div className="menu-card">
-          <StaticImage
-            alt="logo"
-            src="../images/logo.png"
-            placeholder="blurred"
-            className="z-10 h-40 w-auto object-contain"
-            objectFit="contain"
-          />
-          <p className="text-5xl mt-6 mb-8 font-cookie underline underline-offset-2">Menú</p>
-          <div className="grid grid-cols-2 gap-y-3 place-content-center text-xl text-center px-6 mb-4">
-            <div onClick={() => scrollTo("#snacks-section")} className="menu-name light-on delay-75"><Leaf/> <p className="w-[90%] text-start">A toda hora</p></div>
-            <div onClick={() => scrollTo("#fast-options")} className="menu-name light-on delay-100"><p className="w-[90%] text-end">Opciones Ligeras</p> <Leaf/></div>
-            <div onClick={() => scrollTo("#arepas-section")} className="menu-name light-on delay-150"><Leaf/> <p className="w-[90%] text-start">Arepas</p></div>
-            <div onClick={() => scrollTo("#salads-section")} className="menu-name light-on delay-200 justify-end"><p className="w-[90%] text-end">Ensaladas</p> <Leaf/></div>
-            <div onClick={() => scrollTo("#dinners-section")} className="menu-name light-on delay-300"><Leaf/> <p className="w-[90%] text-start">Meriendas</p></div>
-            <div onClick={() => scrollTo("#cocktails-section")} className="menu-name light-on justify-end"><p className="w-[90%] text-end">Cócteles </p><Leaf/></div>
-            <div onClick={() => scrollTo("#fruits-section")} className="menu-name light-on"><Leaf/> <p className="w-[90%] text-start">Ensaladas de Frutas</p></div>
-            <div onClick={() => scrollTo("#juices-section")} className="menu-name light-on justify-end"><p className="w-[90%] text-end">Jugos y batidos </p><Leaf/></div>
-            <div onClick={() => scrollTo("#hotdrinks-section")} className="menu-name light-on"><Leaf/> <p className="w-[90%] text-start">Bebidas calientes y postres</p></div>
+        <div className="grid lg:grid-cols-2 place-content-center">
+          <div className="hidden lg:flex items-center font-poiret justify-center text-4xl light-on bg-black/0">Encuentra el equilibrio</div>
+          <div className="menu-card">
+            <StaticImage
+              alt="logo"
+              src="../images/logo.png"
+              placeholder="blurred"
+              className="z-10 h-40 w-auto object-contain"
+              objectFit="contain"
+            />
+            <p className="text-5xl mt-6 mb-8 font-cookie underline underline-offset-2">Menú</p>
+            <div className="grid grid-cols-2 gap-y-3 place-content-center text-xl text-center px-6 mb-4">
+              <div onClick={() => scrollTo("#snacks-section")} className="menu-name light-on delay-75"><Leaf/> <p className="w-[90%] text-start">A toda hora</p></div>
+              <div onClick={() => scrollTo("#fast-options")} className="menu-name light-on delay-100"><p className="w-[90%] text-end">Opciones Ligeras</p> <Leaf/></div>
+              <div onClick={() => scrollTo("#arepas-section")} className="menu-name light-on delay-150"><Leaf/> <p className="w-[90%] text-start">Arepas</p></div>
+              <div onClick={() => scrollTo("#salads-section")} className="menu-name light-on delay-200 justify-end"><p className="w-[90%] text-end">Ensaladas</p> <Leaf/></div>
+              <div onClick={() => scrollTo("#dinners-section")} className="menu-name light-on delay-300"><Leaf/> <p className="w-[90%] text-start">Meriendas</p></div>
+              <div onClick={() => scrollTo("#cocktails-section")} className="menu-name light-on justify-end"><p className="w-[90%] text-end">Cócteles </p><Leaf/></div>
+              <div onClick={() => scrollTo("#fruits-section")} className="menu-name light-on"><Leaf/> <p className="w-[90%] text-start">Ensaladas de Frutas</p></div>
+              <div onClick={() => scrollTo("#juices-section")} className="menu-name light-on justify-end"><p className="w-[90%] text-end">Jugos y batidos </p><Leaf/></div>
+              <div onClick={() => scrollTo("#hotdrinks-section")} className="menu-name light-on"><Leaf/> <p className="w-[90%] text-start">Bebidas calientes y postres</p></div>
+            </div>
+            <p className="mt-auto lg:hidden font-cookie text-2xl self-end px-5 mb-4">Encuentra el equilibrio</p>
           </div>
-          <p className="mt-auto lg:hidden font-cookie text-2xl self-end px-5 mb-4">Encuentra el equilibrio</p>
         </div>
       </section>
 
