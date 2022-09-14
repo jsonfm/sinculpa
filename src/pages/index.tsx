@@ -64,6 +64,10 @@ export default function IndexPage() {
         </div>
       </section>
 
+      <section className="h-6 bg-white flex items-center overflow-x-auto">
+        <p className="text-brown font-bold text-xl scrolltext w-[1000px] whitespace-nowrap">Todos nuestros productos para llevar se le adicionan $0,25</p>
+      </section>
+
       <section id="snacks-section" className="w-full min-h-screen text-white py-16 xl:py-32">
         <p className="font-bold text-center font-cookie text-[#7e4e2c] text-6xl mb-12 md:mb-24 xl:mb-32 mx-auto rounded-md w-64 relative">A toda hora</p>
         <div className="grid md:grid-cols-2 xl:grid-cols-3 lg:px-32 gap-6 md:gap-32 xl:gap-16 px-5 place-content-center">

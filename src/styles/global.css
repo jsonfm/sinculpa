@@ -76,6 +76,17 @@
     }
 }
 
+.scrolltext {
+  animation: scrolltext 8s linear infinite;
+}
+
+@keyframes scrolltext {
+  0% {transform: translateX(100%);
+    -webkit-transform: translateX(100%);}
+  100% {transform: translateX(-100%);
+      -webkit-transform: translateX(-100%)};
+}
+
 
 .collapse-open {
     animation: bounce-in .200s ease-out;
