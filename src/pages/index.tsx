@@ -34,6 +34,7 @@ export default function IndexPage() {
         <StaticImage
           src="../images/spiralbrownhd2.png"
           alt="spiral"
+          placeholder="blurred"
           style={{position: "absolute"}}
           className="bottom-0 w-full max-w-[600px] left-1/2 -translate-x-1/2"
         />

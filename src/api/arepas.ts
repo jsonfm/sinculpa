@@ -8,7 +8,7 @@ const arepas: Product[] = [
     },
     {
         "name": "Reina Pepiada",
-        "ingredients": "Pollo, aguacate, mayones, cebolla, perejil.",
+        "ingredients": "Pollo, aguacate, mayonesa, cebolla, perejil.",
         "price": 3.00,
         "image": "https://sinculpasite.files.wordpress.com/2022/07/reinapepiada.jpeg",
         "category": {name: "arepa"},
@@ -29,7 +29,7 @@ const arepas: Product[] = [
     },
     {
       "name": "Carne molida",
-      "ingredients": "Carne mechada, Platano frito, queso mozzarella.",
+      "ingredients": "Carne molida y queso fresco.",
       "price": 3.50,
       "image": "https://sinculpasite.files.wordpress.com/2022/07/carne-molida-1-1.jpeg",
       "category": {name: "arepa"},
@@ -57,14 +57,14 @@ const arepas: Product[] = [
     },
     {
         "name": "Arepa Zai",
-        "ingredients": "Carne mechada, Platano frito, queso mozzarella.",
+        "ingredients": "Carne mechada, platano frito, queso mozzarella.",
         "price": 3.50,
         "image": "https://sinculpasite.files.wordpress.com/2022/09/arepazai.jpeg",
         "category": {name: "arepa"},
     },
     {
       "name": "Huevos pericos",
-      "ingredients": "Carne mechada, Platano frito, queso mozzarella.",
+      "ingredients": "Huevos revueltos, tomate, perejil y cebolla.",
       "price": 3.50,
       "image": "https://sinculpasite.files.wordpress.com/2022/07/huevospericos.jpeg",
       "category": {name: "arepa"},

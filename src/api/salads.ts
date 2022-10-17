@@ -1,7 +1,7 @@
 const salads: Product[] = [
     {
         "name": "Ensalada César",
-        "ingredients": "Lechuga, tomate cherry, queso ricota, brotes, pollo, aguacate, maíz amarillo.",
+        "ingredients": "Lechuga, pollo, aderezo césar, crotones y queso parmesano.",
         "price": 5.00,
         "image": "https://sinculpasite.files.wordpress.com/2022/07/cesarsalad.jpeg"
     },
@@ -19,7 +19,7 @@ const salads: Product[] = [
     },
     {
         "name": "Ensalada de Pollo",
-        "ingredients": "Lechuga, crotones, queso parmesano, aderezo césar, pollo, tocino.",
+        "ingredients": "Lechuga, tomate cherry, maíz amarillo, brotes de alfalfa, pollo salteado, aguacate y vinagreta.",
         "price": 5.00,
         "image": "https://sinculpasite.files.wordpress.com/2022/07/chickensalad.jpeg"
     },
