@@ -9,7 +9,7 @@ export const snacks: Product[] = [
   {
     name: "Nacho sin culpa sabores: pollo, res o mixto",
     ingredients: "Nacho, pico de gallo, poroto negro, mozzarella, salsa cheddar, guacamole.",
-    price: 4.00,
+    price: 5.00,
     image: "https://sinculpasite.files.wordpress.com/2022/07/nachosinculpasabores.jpeg",
     category: {name: "snack"},
   },
